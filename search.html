@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Search - Artifacts Emporium</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3 bg-secondary text-light border p-2">
+                <a href="search.html" class="text-light">Search Bar</a>
+            </div>
+            <div class="col-6 bg-secondary text-light border p-2 text-center title-text">
+                <a href="index.html" class="text-light">Artifacts Emporium</a>
+            </div>
+            <div class="col-3 bg-secondary text-light border p-2 text-end">
+                <a href="login.html" class="text-light">Login</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h1>Search</h1>
+        <form action="search_results.html" method="GET">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search for museums..." name="query">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="container mt-3">
+        <h2>Navigation</h2>
+        <ul class="list-group">
+            <li class="list-group-item"><a href="index.html">Home</a></li>
+            <li class="list-group-item"><a href="quemsomos.html">Quem Somos</a></li>
+            <li class="list-group-item"><a href="osnossosmuseus.html">Os nossos Museus</a></li>
+            <li class="list-group-item"><a href="eventos.html">Eventos</a></li>
+            <li class="list-group-item"><a href="bilhetes.html">Compra de Bilhetes</a></li>
+            <li class="list-group-item"><a href="login.html">Login</a></li>
+        </ul>
+    </div>
+
+    <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            &copy; 2024 Artifacts Emporium. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.js"></script>
+</body>
+</html>
