@@ -3,13 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/Tp.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <title>Eventos - Artifacts Emporium</title>
+    <style>
+        /* Estilos personalizados */
+        .event-card {
+            cursor: pointer;
+        }
+        .event-card:hover {
+            transform: scale(1.05);
+        }
+        .event-card img {
+            height: 200px; /* Ajuste conforme necessário */
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
     <div class="container-fluid">
         <div class="row">
+            <!-- Cabeçalho -->
             <div class="col-3 bg-secondary text-light border p-2">
                 <a href="search.html" class="text-light">Search Bar</a>
             </div>
@@ -21,7 +34,6 @@
             </div>
         </div>
     </div>
-
     <div class="container-fluid">
         <div class="row">
             <div class="col-3 bg-secondary text-light text-center">
@@ -38,18 +50,31 @@
             </div>
         </div> 
     </div>    
-
+    
     <div class="container mt-5">
-        <h1>Eventos</h1>
-        <p>Informações sobre os eventos realizados pelo Artifacts Emporium.</p>
+        <h1>Eventos - Artifacts Emporium</h1>
+        <!-- Filtragem por museu -->
+        <div class="mb-3">
+            <label for="museum-filter" class="form-label">Filtrar por Museu:</label>
+            <select class="form-select" id="museum-filter">
+                <option value="all">Todos</option>
+                <option value="Louvre Museum">Louvre Museum</option>
+                <option value="British Museum">British Museum</option>
+                <!-- Adicione mais museus conforme necessário -->
+            </select>
+        </div>
+        <!-- Lista de eventos -->
+        <div class="row mt-4" id="event-list">
+            <!-- Os eventos serão preenchidos aqui pelo JavaScript -->
+        </div>
     </div>
 
-    <footer class="bg-light py-4">
+    <footer class="bg-light py-4 mt-5">
         <div class="container text-center">
             &copy; 2024 Artifacts Emporium. Todos os direitos reservados.
         </div>
     </footer>
 
-    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/eventos.js"></script>
 </body>
 </html>
