@@ -5,20 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/Tp.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"> <!-- Fonte personalizada -->
-    <title>Artifacts Emporium</title>
-    <style>
-        .carousel-title {
-            position: absolute;
-            top: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            font-family: 'Great Vibes', cursive;
-            font-size: 3rem;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-    </style>
+    <title>Criar Conta - Artifacts Emporium</title>
 </head>
 <body>
 <header class="p-3 text-bg-dark">
@@ -48,46 +35,47 @@
     </div>
 </header>
 
-<div id="carouselExampleControls" class="carousel slide position-relative" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <h1 class="carousel-title">Artifacts Emporium</h1>
-        <div class="carousel-item active">
-            <img src="images/museu-do-louvre.jpg" alt="Louvre Museum" class="d-block w-100">
+<div class="container mt-5">
+    <h1>Criar Conta</h1>
+    <form id="registrationForm">
+        <div class="mb-3">
+            <label for="newUsername" class="form-label">Username</label>
+            <input type="text" class="form-control" id="newUsername" required>
         </div>
-        <div class="carousel-item">
-            <img src="images/British_Museum_from_NE_2.jpeg" alt="Museus em Portugal" class="d-block w-100">
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" required>
         </div>
-        <div class="carousel-item">
-            <img src="images/featured_masp.jpg" alt="MASP Museum" class="d-block w-100">
+        <div class="mb-3">
+            <label for="newPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="newPassword" required>
         </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
-   
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-9 content">
-            <h1>Welcome to Artifacts Emporium</h1>
-            <p>Here you can write your text content. Add as much text as needed to fill this space.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.</p>
-        </div>
-    </div>
+        <button type="submit" class="btn btn-primary">Registrar</button>
+        <div id="registrationMessage" class="text-success mt-3"></div>
+    </form>
 </div>
 
-<footer class="bg-light py-4">
+<footer class="bg-light py-4 mt-5">
     <div class="container text-center">
         &copy; 2024 Artifacts Emporium. Todos os direitos reservados.
     </div>
 </footer>
 
 <script src="js/bootstrap.bundle.js"></script>
+<script>
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const newUsername = document.getElementById('newUsername').value;
+        const email = document.getElementById('email').value;
+        const newPassword = document.getElementById('newPassword').value;
+        const registrationMessage = document.getElementById('registrationMessage');
+        
+        // Dummy registration success message
+        registrationMessage.textContent = `Conta criada para ${newUsername} com sucesso!`;
+
+        // You can add further logic here to handle registration in a real application
+    });
+</script>
 </body>
 </html>
