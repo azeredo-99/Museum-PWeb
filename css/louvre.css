@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1, h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+.main-image {
+    margin-bottom: 20px;
+}
+
+.gallery-image {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+#map {
+    margin-bottom: 20px;
+}
+
+.review {
+    margin-bottom: 20px;
+}
