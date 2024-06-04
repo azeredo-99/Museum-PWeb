@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Tickets - British Museum</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Purchase Tickets - British Museum</h1>
+        <form>
+            <div class="mb-3">
+                <label for="ticketType" class="form-label">Ticket Type</label>
+                <select class="form-select" id="ticketType">
+                    <option selected>Select ticket type...</option>
+                    <option value="normal">Normal ($15)</option>
+                    <option value="crianca">Child (Free up to 12 years old)</option>
+                    <option value="idoso">Seniors (Free for over 65 years old)</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="visitDate" class="form-label">Date of Visit</label>
+                <input type="date" class="form-control" id="visitDate">
+            </div>
+            <div class="mb-3">
+                <label for="numberOfTickets" class="form-label">number Of Tickets</label>
+                <input type="number" class="form-control" id="numberOfTickets" min="1" value="1">
+            </div>
+            <button type="submit" class="btn btn-primary">submit</button>
+        </form>
+    </div>
+
+    <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            &copy; 2024 Artifacts Emporium. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.js"></script>
+</body>
+</html>
