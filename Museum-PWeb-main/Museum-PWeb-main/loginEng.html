@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Tp.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Login - Artifacts Emporium</title>
+</head>
+<body>
+    <header class="p-3 text-bg-dark">
+        <div class="container-fluid">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+                </a>
+                <div class="titulo"> <h1>Artifacts Emporium</h1></div>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="indexEng.html" class="nav-link px-2 text-secondary">Home</a></li>
+                    <li><a href="quemSomosEng.html" class="nav-link px-2 text-white">About Us</a></li>
+                    <li><a href="osNossosMuseusEng.html" class="nav-link px-2 text-white">Our Museums</a></li>
+                    <li><a href="eventosEng.html" class="nav-link px-2 text-white">Events</a></li>
+                    <li><a href="bilheetesEng.html" class="nav-link px-2 text-white">Tickets</a></li>
+                </ul>
+                
+                <!--<div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
+                <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='login.html'">Login</button>
+                <button type="button" class="btn btn-warning" onclick="window.location.href='criarconta.html'">Criar Conta</button>
+                </div>-->
+                
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3  d-flex " role="search"> 
+                    <button class="btn btn-dark"><img src="images/searchbar.png" alt="search" height="30px"></button> 
+                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+                </form>
+    
+                <div class="text-end">
+                    <a class="btn btn-dark" href="login.html"><img src="images/pt-button-01.png" alt="PT" height="38px"> PT</a>
+                    <a class="btn btn-dark" href="loginEng.html"><img src="images/uk-button-01.png" alt="UK" height="38px"> Eng</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+
+<div class="container mt-5">
+    <h1>Login</h1>
+    <form id="loginForm">
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+        <div id="errorMessage" class="text-danger mt-3"></div>
+    </form>
+</div>
+
+<footer class="bg-light py-4 mt-5">
+    <div class="container text-center">
+        &copy; 2024 Artifacts Emporium. All rights reserved.
+    </div>
+</footer>
+
+<script src="js/bootstrap.bundle.js"></script>
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const errorMessage = document.getElementById('errorMessage');
+        
+        // Dummy credentials for demonstration
+        const validUsername = 'azeredo';
+        const validPassword = '1234';
+
+        if (username === validUsername && password === validPassword) {
+            window.location.href = 'index.html';
+        } else {
+            errorMessage.textContent = 'Invalid username or password.';
+        }
+    });
+</script>
+</body>
+</html>
