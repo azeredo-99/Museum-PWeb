@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Met - Artifacts Emporium</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/themet.css">
+    <link rel="stylesheet" href="css/Tp.css">
+    <style>
+  
+        .main-image, .gallery-image {
+            width: 80%;
+            height: 500px;
+            object-fit: cover;
+        }
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header class="p-3 text-bg-dark">
+        <div class="container-fluid">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+                </a>
+                <div class="titulo"> <h1>Artifacts Emporium</h1></div>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="index.html" class="nav-link px-2 text-secondary">Home</a></li>
+                    <li><a href="quemsomos.html" class="nav-link px-2 text-white">Quem Somos</a></li>
+                    <li><a href="osnossosmuseus.html" class="nav-link px-2 text-white">Os Nossos Museus</a></li>
+                    <li><a href="eventos.html" class="nav-link px-2 text-white">Eventos</a></li>
+                    <li><a href="bilhetes.html" class="nav-link px-2 text-white">Bilhetes</a></li>
+                </ul>
+                
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3  d-flex " role="search"> 
+                    <button class="btn btn-dark"><img src="images/searchbar.png" alt="search" height="30px"></button> 
+                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+                </form>
+    
+                <div class="text-end">
+                    <a class="btn btn-dark" href="themet.html"><img src="images/pt-button-01.png" alt="PT" height="38px"> PT</a>
+                    <a class="btn btn-dark" href="themetEng.html"><img src="images/uk-button-01.png" alt="UK" height="38px"> Eng</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<div class="container mt-5">
+    <h1 class="text-center">The Met - Museu Metropolitano de Arte</h1>
+    <p>&nbsp;</p> <!-- Espaço após o título -->
+
+    <!-- Foto centralizada -->
+    <div class="text-center">
+        <img src="images/themet.jpg" class="img-fluid main-image" alt="The Met - Museu Metropolitano de Arte">
+    </div>
+    <p>&nbsp;</p> <!-- Espaço após a foto -->
+
+    <!-- Descrição -->
+    <section id="descricao">
+        <h2>Descrição</h2>
+        <p>O Museu Metropolitano de Arte, popularmente conhecido como The Met, é um dos maiores e mais importantes museus de arte do mundo. Localizado na cidade de Nova York, o museu abriga uma vasta coleção permanente que inclui obras de arte de várias culturas e períodos históricos.</p>
+    </section>
+    <p></p>
+    <!-- História -->
+    <section id="historia">
+        <h2>História</h2>
+        <p>O The Met foi fundado em 1870 e abriu oficialmente suas portas em 20 de fevereiro de 1872. Desde então, o museu expandiu sua coleção e suas instalações, tornando-se uma instituição cultural de renome internacional.</p>
+    </section>
+
+    <!-- Mapa -->
+    <section id="mapa">
+        <h2>Mapa</h2>
+        <div id="map"></div>
+    </section>
+
+    <!-- Galeria de Fotos -->
+    <section id="galeria">
+        <h2>Galeria de Fotos</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <img src="images/themet1.jpg" class="img-fluid gallery-image" alt="The Met 1">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="images/themet2.jpg" class="img-fluid gallery-image" alt="The Met 2">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="images/themet3.jpg" class="img-fluid gallery-image" alt="The Met 3">
+            </div>
+        </div>
+    </section>
+
+    <!-- Avaliações -->
+    <section id="avaliacoes">
+        <h2>Avaliações</h2>
+        <div id="reviews">
+            <div class="review">
+                <p><strong>Anna W.</strong>: Uma experiência cultural única! 5/5</p>
+            </div>
+            <div class="review">
+                <p><strong>Michael S.</strong>: Incrível variedade de obras de arte. 4/5</p>
+            </div>
+        </div>
+        <form id="reviewForm">
+            <div class="mb-3">
+                <label for="reviewName" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="reviewName">
+            </div>
+            <div class="mb-3">
+                <label for="reviewText" class="form-label">Avaliação</label>
+                <textarea class="form-control" id="reviewText" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar Avaliação</button>
+        </form>
+    </section>
+
+    <!-- Catálogo de Obras -->
+    <section id="catalogo">
+        <h2>Catálogo de Obras</h2>
+        <ul>
+            <li>A Noite Estrelada, de Vincent van Gogh</li>          
+            <li>A Noite Estrelada, de Vincent van Gogh</li>
+            <li>O Nascimento de Vênus, de Sandro Botticelli</li>
+            <li>O Rapto das Sabinas, de Jacques-Louis David</li>
+            <li>Madona com o Menino, de Rafael</li>
+            <li>O Pensador, de Auguste Rodin</li>
+            <li>Os Girassóis, de Vincent van Gogh</li>
+            <!-- Adicione mais obras aqui -->
+        </ul>
+    </section>
+
+    <a href="bilhetes.html" class="btn btn-primary mt-4">Comprar Bilhetes</a>
+</div>
+
+<footer class="bg-light py-4 mt-5">
+    <div class="container text-center">
+        &copy; 2024 Artifacts Emporium. Todos os direitos reservados.
+    </div>
+</footer>
+
+<script src="js/bootstrap.bundle.js"></script>
+<!-- Insira sua chave de API do Google Maps aqui -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBhLbHnR1ELOgwjUHGh8xj-9gKGcWTkDU&callback=initMap" async defer></script>
+<script src="js/themet.js"></script>
+</body>
+</html>
+

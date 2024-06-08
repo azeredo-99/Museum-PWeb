@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esposende Museum</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/esposende.css">
+    <link rel="stylesheet" href="css/Tp.css">
+    <style>
+        .main-image, .gallery-image {
+            width: 80%;
+            height: 300px;
+            object-fit: cover;
+        }
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="p-3 text-bg-dark">
+        <div class="container-fluid">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <!-- Logo and Title -->
+                <a href="indexEng.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+                </a>
+                <div class="titulo"> <h1>Artifacts Emporium</h1></div>
+                <!-- Navigation Links -->
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="indexEng.html" class="nav-link px-2 text-secondary">Home</a></li>
+                    <li><a href="quemSomosEng.html" class="nav-link px-2 text-white">About Us</a></li>
+                    <li><a href="osNossosMuseusEng.html" class="nav-link px-2 text-white">Our Museums</a></li>
+                    <li><a href="eventosEng.html" class="nav-link px-2 text-white">Events</a></li>
+                    <li><a href="bilheetesEng.html" class="nav-link px-2 text-white">Tickets</a></li>
+                </ul>
+                <!-- Search Bar -->
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3  d-flex " role="search"> 
+                    <button class="btn btn-dark"><img src="images/searchbar.png" alt="search" height="30px"></button> 
+                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+                </form>
+                <!-- Language Buttons -->
+                <div class="text-end">
+                    <a class="btn btn-dark" href="esposende.html"><img src="images/pt-button-01.png" alt="PT" height="38px"> PT</a>
+                    <a class="btn btn-dark" href="esposendeEng.html"><img src="images/uk-button-01.png" alt="UK" height="38px"> Eng</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Body -->
+    <div class="container mt-5">
+        <h1 class="text-center">Esposende Museum</h1>
+        <p>&nbsp;</p> <!-- Space after title -->
+
+        <!-- Centered Photo -->
+        <div class="text-center">
+            <img src="images/museu-de-esposende.jpg" class="img-fluid main-image" alt="Esposende Museum">
+        </div>
+        <p>&nbsp;</p> <!-- Space after photo -->
+
+        <!-- Description -->
+        <section id="descricao">
+            <h2>Description</h2>
+            <p>The Esposende Museum is an important cultural center located in the city of Esposende, Portugal. It presents a rich collection of historical artifacts and temporary exhibitions that celebrate local and regional culture.</p>
+        </section>
+        <p></p>
+        <!-- History -->
+        <section id="historia">
+            <h2>History</h2>
+            <p>The Esposende Museum has its origins in local initiatives to preserve the cultural heritage of the region. Over the years, it has grown in size and importance, becoming a point of reference for scholars and enthusiasts of local history.</p>
+        </section>
+
+        <!-- Map -->
+        <section id="mapa">
+            <h2>Map</h2>
+            <div id="map"></div>
+        </section>
+
+        <!-- Photo Gallery -->
+        <section id="galeria">
+            <h2>Photo Gallery</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <img src="images/esposende1.jpg" class="img-fluid gallery-image" alt="Esposende 1">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="images/esposende2.jpg" class="img-fluid gallery-image" alt="Esposende 2">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="images/esposende3.jpg" class="img-fluid gallery-image" alt="Esposende 3">
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews -->
+        <section id="avaliacoes">
+            <h2>Reviews</h2>
+            <div id="reviews">
+            <div class="review">
+                <p><strong>Anna R.</strong>: Fascinating exhibitions! 5/5</p>
+            </div>
+            <div class="review">
+                <p><strong>Mark L.</strong>: Great place to learn about local history. 4/5</p>
+            </div>
+        </div>
+        <form id="reviewForm">
+            <div class="mb-3">
+                <label for="reviewName" class="form-label">Name</label>
+                <input type="text" class="form-control" id="reviewName">
+            </div>
+            <div class="mb-3">
+                <label for="reviewText" class="form-label">Review</label>
+                <textarea class="form-control" id="reviewText" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Review</button>
+        </form>
+    </section>
+
+    <!-- Catalog of Works -->
+    <section id="catalogo">
+        <h2>Catalog of Works</h2>
+        <ul>
+            <li>Esposende Rock Art</li>
+            <li>Statue of D. Pedro I</li>
+            <li>Archaeological Fragments from Castro de São Lourenço</li>
+            <li>Artifacts from Local Maritime Culture</li>
+            <!-- Add more works here -->
+        </ul>
+    </section>
+
+    <!-- Buy Tickets Button -->
+    <a href="esposendepagamentoEng.html" class="btn btn-primary mt-4">Buy Tickets</a>
+</div>
+
+<!-- Footer -->
+<footer class="bg-light py-4 mt-5">
+    <div class="container text-center">
+        &copy; 2024 Artifacts Emporium. All rights reserved.
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/bootstrap.bundle.js"></script>
+<!-- Insert your Google Maps API key here -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBhLbHnR1ELOgwjUHGh8xj-9gKGcWTkDU&callback=initMap" async defer></script>
+<script src="js/esposendeEng.js"></script>
+</body>
+</html>

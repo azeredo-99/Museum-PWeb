@@ -20,6 +20,7 @@
         }
     </style>
 </head>
+<body>
 <header class="p-3 text-bg-dark">
     <div class="container-fluid">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -34,7 +35,7 @@
                 <li><a href="eventos.html" class="nav-link px-2 text-white">Eventos</a></li>
                 <li><a href="bilhetes.html" class="nav-link px-2 text-white">Bilhetes</a></li>
             </ul>
-            
+
             <!--<div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
                 <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='login.html'">Login</button>
                 <button type="button" class="btn btn-warning" onclick="window.location.href='criarconta.html'">Criar Conta</button>
@@ -54,30 +55,122 @@
 </header>
 
 
-    <div class="container mt-5">
-        <h1>Eventos - Artifacts Emporium</h1>
-        <!-- Filtragem por museu -->
-        <div class="mb-3">
-            <label for="museum-filter" class="form-label">Filtrar por Museu:</label>
-            <select class="form-select" id="museum-filter">
-                <option value="all">Todos</option>
-                <option value="Louvre Museum">Louvre Museum</option>
-                <option value="British Museum">British Museum</option>
-                <!-- Adicione mais museus conforme necessário -->
-            </select>
+<div class="container mt-5">
+    <h1>Eventos - Artifacts Emporium</h1>
+    <!-- Filtragem por museu -->
+    <div class="mb-3">
+        <label for="museum-filter" class="form-label">Filtrar por Museu:</label>
+        <select class="form-select" id="museum-filter">
+            <option value="all">Todos</option>
+            <option value="Louvre Museum">Louvre Museum</option>
+            <option value="British Museum">British Museum</option>
+            <option value="Museu de Esposende">Museu de Esposende</option>
+            <!-- Adicione mais museus conforme necessário -->
+        </select>
+    </div>
+    <!-- Lista de eventos -->
+    <div class="row mt-4" id="event-list">
+        <!-- Os eventos serão preenchidos aqui pelo JavaScript -->
+        <div class="col-md-4 mb-4">
+            <div class="card event-card" data-museum="Louvre Museum">
+                <img src="images/event1.jpg" class="card-img-top" alt="Event 1">
+                <div class="card-body">
+                    <h5 class="card-title">Exposição de Arte Clássica</h5>
+                    <p class="card-text">Data: 15 de janeiro de 2025</p>
+                </div>
+            </div>
         </div>
-        <!-- Lista de eventos -->
-        <div class="row mt-4" id="event-list">
-            <!-- Os eventos serão preenchidos aqui pelo JavaScript -->
+        <div class="col-md-4 mb-4">
+            <div class="card event-card" data-museum="British Museum">
+                <img src="images/event2.jpg" class="card-img-top" alt="Event 2">
+                <div class="card-body">
+                    <h5 class="card-title">Palestra sobre Civilizações Antigas</h5>
+                    <p class="card-text">Data: 20 de fevereiro de 2025</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card event-card" data-museum="Louvre Museum">
+                <img src="images/event3.jpg" class="card-img-top" alt="Event 3">
+                <div class="card-body">
+                    <h5 class="card-title">Workshop de Escultura</h5>
+                    <p class="card-text">Data: 5 de março de 2025</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card event-card" data-museum="British Museum">
+                <img src="images/event4.jpg" class="card-img-top" alt="Event 4">
+                <div class="card-body">
+                    <h5 class="card-title">Apresentação de Arte Moderna</h5>
+                    <p class="card-text">Data: 10 de abril de 2025</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card event-card" data-museum="Museu de Esposende">
+                <img src="images/esposende1.jpg" class="card-img-top" alt="Event 5">
+                <div class="card-body">
+                    <h5 class="card-title">Conferência sobre Renascimento</h5>
+                    <p class="card-text">Data: 15 de maio de 2025</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card event-card" data-museum="British Museum">
+            <img src="images/esposende3.jpg" class="card-img-top" alt="Event 6">
+            <div class="card-body">
+                <h5 class="card-title">Sessão de Cinema Clássico</h5>
+                <p class="card-text">Data: 20 de junho de 2025</p>
+            </div>
         </div>
     </div>
-
-    <footer class="bg-light py-4 mt-5">
-        <div class="container text-center">
-            &copy; 2024 Artifacts Emporium. Todos os direitos reservados.
+    <div class="col-md-4 mb-4">
+        <div class="card event-card" data-museum="Louvre Museum">
+            <img src="images/event7.jpg" class="card-img-top" alt="Event 7">
+            <div class="card-body">
+                <h5 class="card-title">Oficina de Pintura em Aquarela</h5>
+                <p class="card-text">Data: 25 de julho de 2025</p>
+            </div>
         </div>
-    </footer>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card event-card" data-museum="British Museum">
+            <img src="images/event8.jpg" class="card-img-top" alt="Event 8">
+            <div class="card-body">
+                <h5 class="card-title">Exibição de Arte Contemporânea</h5>
+                <p class="card-text">Data: 30 de agosto de 2025</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card event-card" data-museum="Louvre Museum">
+            <img src="images/event9.jpg" class="card-img-top" alt="Event 9">
+            <div class="card-body">
+                <h5 class="card-title">Apresentação de Dança Clássica</h5>
+                <p class="card-text">Data: 5 de setembro de 2025</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card event-card" data-museum="British Museum">
+            <img src="images/event10.jpg" class="card-img-top" alt="Event 10">
+            <div class="card-body">
+                <h5 class="card-title">Concerto de Música Antiga</h5>
+                <p class="card-text">Data: 10 de outubro de 2025</p>
+            </div>
+        </div>
+    </div>
+    <!-- Adicione mais eventos conforme necessário -->
+</div>
+</div>
 
-    <script src="js/eventos.js"></script>
+<footer class="bg-light py-4 mt-5">
+<div class="container text-center">
+    &copy; 2024 Artifacts Emporium. Todos os direitos reservados.
+</div>
+</footer>
+
+<script src="js/eventos.js"></script>
 </body>
 </html>

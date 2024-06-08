@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museu Reina Sofia</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/reinasofia.css">
+    <link rel="stylesheet" href="css/Tp.css">
+    <style>
+        .main-image, .gallery-image {
+            width: 80%;
+            height: 300px;
+            object-fit: cover;
+        }
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header class="p-3 text-bg-dark">
+        <div class="container-fluid">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+                </a>
+                <div class="titulo"> <h1>Artifacts Emporium</h1></div>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="index.html" class="nav-link px-2 text-secondary">Home</a></li>
+                    <li><a href="quemsomos.html" class="nav-link px-2 text-white">Quem Somos</a></li>
+                    <li><a href="osnossosmuseus.html" class="nav-link px-2 text-white">Os Nossos Museus</a></li>
+                    <li><a href="eventos.html" class="nav-link px-2 text-white">Eventos</a></li>
+                    <li><a href="bilhetes.html" class="nav-link px-2 text-white">Bilhetes</a></li>
+                </ul>
+                
+                <!--<div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
+                <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='login.html'">Login</button>
+                <button type="button" class="btn btn-warning" onclick="window.location.href='criarconta.html'">Criar Conta</button>
+                </div>-->
+                
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3  d-flex " role="search"> 
+                    <button class="btn btn-dark"><img src="images/searchbar.png" alt="search" height="30px"></button> 
+                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+                </form>
+    
+                <div class="text-end">
+                    <a class="btn btn-dark" href="reinasofia.html"><img src="images/pt-button-01.png" alt="PT" height="38px"> PT</a>
+                    <a class="btn btn-dark" href="reinasofiaEng.html"><img src="images/uk-button-01.png" alt="UK" height="38px"> Eng</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<div class="container mt-5">
+    <h1 class="text-center">Museu Reina Sofia</h1>
+    <p>&nbsp;</p> <!-- Espaço após o título -->
+
+    <!-- Foto centralizada -->
+    <div class="text-center">
+        <img src="images/reinasofia.jpg" class="img-fluid main-image" alt="Museu Reina Sofia">
+    </div>
+    <p>&nbsp;</p> <!-- Espaço após a foto -->
+
+    <!-- Descrição -->
+    <section id="descricao">
+        <h2>Descrição</h2>
+        <p>O Museu Nacional Centro de Arte Reina Sofia, ou simplesmente Museu Reina Sofia, é o museu nacional espanhol de arte do século XX, situado em Madrid. É uma das maiores e mais importantes coleções de arte moderna e contemporânea do mundo.</p>
+    </section>
+    <p></p>
+    <!-- História -->
+    <section id="historia">
+        <h2>História</h2>
+        <p>O Museu Reina Sofia foi inaugurado oficialmente em 1992 e recebeu o nome da Rainha Sofia da Espanha. Ele está instalado no antigo Hospital de San Carlos, um edifício neoclássico do século XVIII. O museu é conhecido por abrigar o famoso quadro "Guernica" de Pablo Picasso.</p>
+    </section>
+
+    <!-- Mapa -->
+    <section id="mapa">
+        <h2>Mapa</h2>
+        <div id="map"></div>
+    </section>
+
+    <!-- Galeria de Fotos -->
+    <section id="galeria">
+        <h2>Galeria de Fotos</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <img src="images/reinasofia1.jpg" class="img-fluid gallery-image" alt="Reina Sofia 1">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="images/reinasofia2.jpg" class="img-fluid gallery-image" alt="Reina Sofia 2">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="images/reinasofia3.jpg" class="img-fluid gallery-image" alt="Reina Sofia 3">
+            </div>
+        </div>
+    </section>
+
+    <!-- Avaliações -->
+    <section id="avaliacoes">
+        <h2>Avaliações</h2>
+        <div id="reviews">
+            <div class="review">
+                <p><strong>Carlos R.</strong>: Uma exposição incrível de arte moderna. 5/5</p>
+            </div>
+            <div class="review">
+                <p><strong>Ana L.</strong>: Adorei ver o Guernica ao vivo. 4/5</p>
+            </div>
+        </div>
+        <form id="reviewForm">
+            <div class="mb-3">
+                <label for="reviewName" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="reviewName">
+            </div>
+            <div class="mb-3">
+                <label for="reviewText" class="form-label">Avaliação</label>
+                <textarea class="form-control" id="reviewText" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar Avaliação</button>
+        </form>
+    </section>
+
+    <!-- Catálogo de Obras -->
+    <section id="catalogo">
+        <h2>Catálogo de Obras</h2>
+        <ul>
+            <li>Guernica - Pablo Picasso</li>
+            <li>La mujer en azul - Pablo Picasso</li>
+            <li>El gran masturbador - Salvador Dalí</li>
+            <li>Personnage et oiseau dans la nuit - Joan Miró</li>
+            <li>Autorretrato cubista - Salvador Dalí</li>
+            <li>Un mundo - Ángeles Santos</li>
+            <!-- Adicione mais obras aqui -->
+        </ul>
+    </section>
+
+    <a href="bilhetes.html" class="btn btn-primary mt-4">Comprar Bilhetes</a>
+</div>
+
+<footer class="bg-light py-4 mt-5">
+    <div class="container text-center">
+        &copy; 2024 Artifacts Emporium. Todos os direitos reservados.
+    </div>
+</footer>
+
+<script src="js/bootstrap.bundle.js"></script>
+<!-- Insira sua chave de API do Google Maps aqui -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBhLbHnR1ELOgwjUHGh8xj-9gKGcWTkDU&callback=initMap" async defer></script>
+<script src="js/reinasofia.js"></script>
+</body>
+</html>
