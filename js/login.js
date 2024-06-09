@@ -17,7 +17,9 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
         const data = await response.json();
 
         if (data.message === 'success') {
-            window.location.href = 'index.html';
+            //window.location.href = 'index.html';
+            errorMessage.className = 'text-success';
+            errorMessage.textContent = 'Login efetuado com sucesso';
         } else {
             errorMessage.textContent = data.error;
         }
