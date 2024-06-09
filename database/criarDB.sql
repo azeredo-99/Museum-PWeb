@@ -4,7 +4,6 @@
 CREATE TABLE Utilizador (
     pk_id_user INT IDENTITY(1,1) PRIMARY KEY,
     nome NVARCHAR(100) NOT NULL,
-    data_nasc DATE NOT NULL,
     email NVARCHAR(100) NOT NULL UNIQUE,
     password NVARCHAR(100) NOT NULL
 );
