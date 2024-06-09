@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compra de Bilhetes - Museu do Louvre</title>
+    <title>Buy Tickets - Esposende Museum</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/Tp.css">
 </head>
@@ -11,23 +11,20 @@
     <header class="p-3 text-bg-dark">
         <div class="container-fluid">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a href="index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <!-- Logo and Title -->
+                <a href="indexEng.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                     <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
                 </a>
                 <div class="titulo"> <h1>Artifacts Emporium</h1></div>
+                <!-- Navigation Links -->
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="index.html" class="nav-link px-2 text-secondary">Home</a></li>
-                    <li><a href="quemsomos.html" class="nav-link px-2 text-white">Quem Somos</a></li>
-                    <li><a href="osnossosmuseus.html" class="nav-link px-2 text-white">Os Nossos Museus</a></li>
-                    <li><a href="eventos.html" class="nav-link px-2 text-white">Eventos</a></li>
-                    <li><a href="bilhetes.html" class="nav-link px-2 text-white">Bilhetes</a></li>
+                    <li><a href="indexEng.html" class="nav-link px-2 text-secondary">Home</a></li>
+                    <li><a href="quemSomosEng.html" class="nav-link px-2 text-white">About Us</a></li>
+                    <li><a href="osNossosMuseusEng.html" class="nav-link px-2 text-white">Our Museums</a></li>
+                    <li><a href="eventosEng.html" class="nav-link px-2 text-white">Events</a></li>
+                    <li><a href="bilheetesEng.html" class="nav-link px-2 text-white">Tickets</a></li>
                 </ul>
-                
-                <!--<div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
-                <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='login.html'">Login</button>
-                <button type="button" class="btn btn-warning" onclick="window.location.href='criarconta.html'">Criar Conta</button>
-                </div>-->
-                
+                <!-- Search Bar -->
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3  d-flex " role="search"> 
                     <button class="btn btn-dark"><img src="images/searchbar.png" alt="search" height="30px"></button> 
                     <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
@@ -42,32 +39,32 @@
     </header>
 
     <div class="container mt-5">
-        <h1>Compra de Bilhetes - Museu de Esposende</h1>
+        <h1>Buy Tickets - Esposende Museum</h1>
         <form id="ticketForm">
             <div class="mb-3">
-                <label for="ticketType" class="form-label">Tipo de Bilhete</label>
+                <label for="ticketType" class="form-label">Ticket Type</label>
                 <select class="form-select" id="ticketType">
-                    <option selected>Selecione o tipo de bilhete...</option>
+                    <option selected>Select the type of ticket...</option>
                     <option value="normal">Normal ($10)</option>
-                    <option value="crianca">Criança (Grátis até 12 anos)</option>
-                    <option value="idoso">Idoso (Grátis para maiores de 65 anos)</option>
+                    <option value="crianca">Children (Free up to 12 years)</option>
+                    <option value="idoso">Senior Citizens (Free for over 65s)</option>
                 </select>
             </div>
             <div class="mb-3">
-                <label for="visitDate" class="form-label">Data da Visita</label>
+                <label for="visitDate" class="form-label">Date of visit</label>
                 <input type="date" class="form-control" id="visitDate">
             </div>
             <div class="mb-3">
-                <label for="numberOfTickets" class="form-label">Número de Bilhetes</label>
+                <label for="numberOfTickets" class="form-label">Number of Tickets</label>
                 <input type="number" class="form-control" id="numberOfTickets" min="1" value="1">
             </div>
-            <button type="button" class="btn btn-primary" id="addToCartBtn">Adicionar ao Carrinho</button>
+            <button type="button" class="btn btn-primary" id="addToCartBtn">Add to basket</button>
         </form>
     </div>
 
     <footer class="bg-light py-4 mt-5">
         <div class="container text-center">
-            &copy; 2024 Artifacts Emporium. Todos os direitos reservados.
+            &copy; 2024 Artifacts Emporium. All rights reserved.
         </div>
     </footer>
 
@@ -76,9 +73,9 @@
         // Função para adicionar ao carrinho
         function adicionarAoCarrinho(ticketDetails) {
             // Aqui você pode implementar a lógica para adicionar os bilhetes ao carrinho
-            console.log('Bilhete adicionado ao carrinho:', ticketDetails);
+            console.log('Ticket added to basket:', ticketDetails);
             // Redireciona para a página do carrinho
-            window.location.href = 'carrinho.html';
+            window.location.href = 'carrinhoEng.html';
         }
 
         // Evento de clique no botão "Adicionar ao Carrinho"
@@ -95,6 +92,5 @@
             adicionarAoCarrinho(ticketDetails);
         });
     </script>
-    <script src="js/search.js"></script>
 </body>
 </html>
