@@ -24,11 +24,6 @@
                     <li><a href="bilhetes.html" class="nav-link px-2 text-white">Bilhetes</a></li>
                 </ul>
                 
-                <!--<div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
-                <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='login.html'">Login</button>
-                <button type="button" class="btn btn-warning" onclick="window.location.href='criarconta.html'">Criar Conta</button>
-                    </div>-->
-                    
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3  d-flex " role="search"> 
                     <button class="btn btn-dark"><img src="images/searchbar.png" alt="search" height="30px"></button> 
                     <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
@@ -69,20 +64,7 @@
 </footer>
 
 <script src="js/bootstrap.bundle.js"></script>
-<script>
-    document.getElementById('registrationForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        const newUsername = document.getElementById('newUsername').value;
-        const email = document.getElementById('email').value;
-        const newPassword = document.getElementById('newPassword').value;
-        const registrationMessage = document.getElementById('registrationMessage');
-        
-        // Dummy registration success message
-        registrationMessage.textContent = `Conta criada para ${newUsername} com sucesso!`;
-
-        // You can add further logic here to handle registration in a real application
-    });
-</script>
+<script src="js/search.js"></script>
+<script src="js/register.js"></script>
 </body>
 </html>
