@@ -21,9 +21,11 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
             errorMessage.className = 'text-success';
             errorMessage.textContent = 'Login efetuado com sucesso';
         } else {
+            errorMessage.className = 'text-danger';
             errorMessage.textContent = data.error;
         }
     } catch (error) {
+        errorMessage.className = 'text-danger';
         errorMessage.textContent = 'Erro ao fazer login. Tente novamente mais tarde.';
         console.error('Erro:', error);
     }
