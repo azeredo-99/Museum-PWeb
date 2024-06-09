@@ -35,23 +35,16 @@
                 <li><a href="eventos.html" class="nav-link px-2 text-white">Eventos</a></li>
                 <li><a href="bilhetes.html" class="nav-link px-2 text-white">Bilhetes</a></li>
             </ul>
-            
-            <!--<div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
-                <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='login.html'">Login</button>
-                <button type="button" class="btn btn-warning" onclick="window.location.href='criarconta.html'">Criar Conta</button>
-            </div>-->
 
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex" role="search" action="search.php" method="GET">
-                <input type="search" name="query" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+            <form id="searchForm" id="search" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex" role="search">
+                <input type="search" id="searchQuery" name="query" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
                 <button class="btn btn-dark" type="submit"><img src="images/searchbar.png" alt="search" height="30px"></button>
             </form>
-            
 
             <div class="text-end">
                 <a class="btn btn-dark" href="index.html"><img src="images/pt-button-01.png" alt="PT" height="38px"> PT</a>
                 <a class="btn btn-dark" href="indexEng.html"><img src="images/uk-button-01.png" alt="UK" height="38px"> Eng</a>
             </div>
-
         </div>
     </div>
 </header>
@@ -78,15 +71,19 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
-   
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-9 content">
             <h1>Welcome to Artifacts Emporium</h1>
-            <h5 Os maiores museus do mundo no conforto da sua casa. Descubra a arte, a história e a cultura preservadas em nossas instituições parceiras e obtenha insights sobre as maiores conquistas da humanidade.>Explore os maiores museus do mundo no conforto da sua casa. Descubra a arte, a história e a cultura preservadas nas nossas instituições parceiras e obtenha insights sobre as maiores conquistas da humanidade.</h5>
+            <h5>Explore os maiores museus do mundo no conforto da sua casa. Descubra a arte, a história e a cultura preservadas nas nossas instituições parceiras e obtenha insights sobre as maiores conquistas da humanidade.</h5>
         </div>
     </div>
+</div>
+
+<!-- Search Results Container -->
+<div id="searchResults" class="container-fluid mt-4">
+    <!-- Results will be displayed here -->
 </div>
 
 <footer class="bg-light py-4">
@@ -96,5 +93,7 @@
 </footer>
 
 <script src="js/bootstrap.bundle.js"></script>
+<script src="js/search.js"></script>
+</script>
 </body>
 </html>
