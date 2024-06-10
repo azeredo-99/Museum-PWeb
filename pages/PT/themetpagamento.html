@@ -4,38 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compra de Bilhetes - Museu do Louvre</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/Tp.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/Tp.css">
 </head>
 <body>
     <header class="p-3 text-bg-dark">
         <div class="container-fluid">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a href="index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <a href="/pages/PT/index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                     <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
                 </a>
                 <div class="titulo"> <h1>Artifacts Emporium</h1></div>
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="index.html" class="nav-link px-2 text-secondary">Home</a></li>
-                    <li><a href="quemsomos.html" class="nav-link px-2 text-white">Quem Somos</a></li>
-                    <li><a href="osnossosmuseus.html" class="nav-link px-2 text-white">Os Nossos Museus</a></li>
-                    <li><a href="eventos.html" class="nav-link px-2 text-white">Eventos</a></li>
-                    <li><a href="bilhetes.html" class="nav-link px-2 text-white">Bilhetes</a></li>
+                    <li><a href="/pages/PT/index.html" class="nav-link px-2 text-secondary">Home</a></li>
+                    <li><a href="/pages/PT/quemsomos.html" class="nav-link px-2 text-white">Quem Somos</a></li>
+                    <li><a href="/pages/PT/osnossosmuseus.html" class="nav-link px-2 text-white">Os Nossos Museus</a></li>
+                    <li><a href="/pages/PT/eventos.html" class="nav-link px-2 text-white">Eventos</a></li>
+                    <li><a href="/pages/PT/bilhetes.html" class="nav-link px-2 text-white">Bilhetes</a></li>
                 </ul>
                 
-                <div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
-                    <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='login.html'">Login</button>
-                    <button type="button" class="btn btn-warning" onclick="window.location.href='criarconta.html'">Criar Conta</button>
-                    </div>
-                    
+                <!--<div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
+                <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='login.html'">Login</button>
+                <button type="button" class="btn btn-warning" onclick="window.location.href='criarconta.html'">Criar Conta</button>
+                </div>-->
+                
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3  d-flex " role="search"> 
-                    <button class="btn btn-dark"><img src="images/searchbar.png" alt="search" height="30px"></button> 
+                    <button class="btn btn-dark"><img src="/images/searchbar.png" alt="search" height="30px"></button> 
                     <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
                 </form>
     
                 <div class="text-end">
-                    <a class="btn btn-dark" href="themetpagamento.html"><img src="images/pt-button-01.png" alt="PT" height="38px"> PT</a>
-                    <a class="btn btn-dark" href="themetpagamentoEng.html"><img src="images/uk-button-01.png" alt="UK" height="38px"> Eng</a>
+                    <a class="btn btn-dark" href="/pages/PT/themetpagamento.html"><img src="/images/pt-button-01.png" alt="PT" height="38px"> PT</a>
+                    <a class="btn btn-dark" href="/pages/PT/themetpagamento.html"><img src="/images/uk-button-01.png" alt="UK" height="38px"> Eng</a>
                 </div>
             </div>
         </div>
@@ -71,29 +71,7 @@
         </div>
     </footer>
 
-    <script src="js/bootstrap.bundle.js"></script>
-    <script>
-        // Função para adicionar ao carrinho
-        function adicionarAoCarrinho(ticketDetails) {
-            // Aqui você pode implementar a lógica para adicionar os bilhetes ao carrinho
-            console.log('Bilhete adicionado ao carrinho:', ticketDetails);
-            // Redireciona para a página do carrinho
-            window.location.href = 'carrinho.html';
-        }
-
-        // Evento de clique no botão "Adicionar ao Carrinho"
-        document.getElementById('addToCartBtn').addEventListener('click', function(event) {
-            event.preventDefault();
-            const ticketType = document.getElementById('ticketType').value;
-            const visitDate = document.getElementById('visitDate').value;
-            const numberOfTickets = document.getElementById('numberOfTickets').value;
-            const ticketDetails = {
-                type: ticketType,
-                date: visitDate,
-                quantity: numberOfTickets
-            };
-            adicionarAoCarrinho(ticketDetails);
-        });
-    </script>
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="/js/adicionarCarrinho.js"></script>
 </body>
 </html>

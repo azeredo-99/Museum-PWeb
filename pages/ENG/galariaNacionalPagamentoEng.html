@@ -4,35 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buy Tickets - National Gallery London</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/Tp.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/Tp.css">
 </head>
 <body>
     <header class="p-3 text-bg-dark">
         <div class="container-fluid">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <!-- Logo and Title -->
-                <a href="indexEng.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <a href="/pages/ENG/indexEng.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                     <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
                 </a>
                 <div class="titulo"> <h1>Artifacts Emporium</h1></div>
                 <!-- Navigation Links -->
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="indexEng.html" class="nav-link px-2 text-secondary">Home</a></li>
-                    <li><a href="quemSomosEng.html" class="nav-link px-2 text-white">About Us</a></li>
-                    <li><a href="osNossosMuseusEng.html" class="nav-link px-2 text-white">Our Museums</a></li>
-                    <li><a href="eventosEng.html" class="nav-link px-2 text-white">Events</a></li>
-                    <li><a href="bilheetesEng.html" class="nav-link px-2 text-white">Tickets</a></li>
+                    <li><a href="/pages/ENG/indexEng.html" class="nav-link px-2 text-secondary">Home</a></li>
+                    <li><a href="/pages/ENG/quemSomosEng.html" class="nav-link px-2 text-white">About Us</a></li>
+                    <li><a href="/pages/ENG/osNossosMuseusEng.html" class="nav-link px-2 text-white">Our Museums</a></li>
+                    <li><a href="/pages/ENG/eventosEng.html" class="nav-link px-2 text-white">Events</a></li>
+                    <li><a href="/pages/ENG/bilhetesEng.html" class="nav-link px-2 text-white">Tickets</a></li>
                 </ul>
                 <!-- Search Bar -->
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3  d-flex " role="search"> 
-                    <button class="btn btn-dark"><img src="images/searchbar.png" alt="search" height="30px"></button> 
+                    <button class="btn btn-dark"><img src="/images/searchbar.png" alt="search" height="30px"></button> 
                     <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
                 </form>
     
                 <div class="text-end">
-                    <a class="btn btn-dark" href="galerianacionalpagamento.html"><img src="images/pt-button-01.png" alt="PT" height="38px"> PT</a>
-                    <a class="btn btn-dark" href="galariaNacionalPagamentoEng.html"><img src="images/uk-button-01.png" alt="UK" height="38px"> Eng</a>
+                    <a class="btn btn-dark" href="/pages/PT/galerianacionalpagamento.html"><img src="/images/pt-button-01.png" alt="PT" height="38px"> PT</a>
+                    <a class="btn btn-dark" href="/pages/ENG/galariaNacionalPagamentoEng.html"><img src="/images/uk-button-01.png" alt="UK" height="38px"> Eng</a>
                 </div>
             </div>
         </div>
@@ -68,29 +68,8 @@
         </div>
     </footer>
 
-    <script src="js/bootstrap.bundle.js"></script>
-    <script>
-        // Função para adicionar ao carrinho
-        function adicionarAoCarrinho(ticketDetails) {
-            // Aqui você pode implementar a lógica para adicionar os bilhetes ao carrinho
-            console.log('Ticket added to basket:', ticketDetails);
-            // Redireciona para a página do carrinho
-            window.location.href = 'carrinhoEng.html';
-        }
-
-        // Evento de clique no botão "Adicionar ao Carrinho"
-        document.getElementById('addToCartBtn').addEventListener('click', function(event) {
-            event.preventDefault();
-            const ticketType = document.getElementById('ticketType').value;
-            const visitDate = document.getElementById('visitDate').value;
-            const numberOfTickets = document.getElementById('numberOfTickets').value;
-            const ticketDetails = {
-                type: ticketType,
-                date: visitDate,
-                quantity: numberOfTickets
-            };
-            adicionarAoCarrinho(ticketDetails);
-        });
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="/js/adicionarCarrinhoEng.js">
     </script>
 </body>
 </html>

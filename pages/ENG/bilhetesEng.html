@@ -4,51 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ticket Purchase - Artifacts Emporium</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/Tp.css">
-    <style>
-        /* Add custom styles as needed */
-        .museum-card {
-            cursor: pointer;
-        }
-        .museum-card:hover {
-            transform: scale(1.05);
-        }
-        .museum-card img {
-            height: 200px; /* Set a fixed height for images */
-            object-fit: cover; /* Ensures the image fills the container while maintaining its proportion */
-        }
-    </style>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/Tp.css">
+    <link rel="stylesheet" href="/css/card.css">
+
 </head>
 <body>
     <header class="p-3 text-bg-dark">
         <div class="container-fluid">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a href="index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <a href="/pages/ENG/index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                     <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
                 </a>
                 <div class="titulo"> <h1>Artifacts Emporium</h1></div>
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="index.html" class="nav-link px-2 text-secondary">Home</a></li>
-                    <li><a href="quemsomos.html" class="nav-link px-2 text-white">Quem Somos</a></li>
-                    <li><a href="osnossosmuseus.html" class="nav-link px-2 text-white">Os Nossos Museus</a></li>
-                    <li><a href="eventos.html" class="nav-link px-2 text-white">Eventos</a></li>
-                    <li><a href="bilhetes.html" class="nav-link px-2 text-white">Bilhetes</a></li>
+                    <li><a href="/pages/ENG/indexEng.html" class="nav-link px-2 text-secondary">Home</a></li>
+                    <li><a href="/pages/ENG/quemSomosEng.html" class="nav-link px-2 text-white">About Us</a></li>
+                    <li><a href="/pages/ENG/osNossosMuseusEng.html" class="nav-link px-2 text-white">Our Museums</a></li>
+                    <li><a href="/pages/ENG/eventosEng.html" class="nav-link px-2 text-white">Events</a></li>
+                    <li><a href="/pages/ENG/bilhetesEng.html" class="nav-link px-2 text-white">Tickets</a></li>
                 </ul>
-    
-                <div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
-                    <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='login.html'">Login</button>
-                    <button type="button" class="btn btn-warning" onclick="window.location.href='criarconta.html'">Criar Conta</button>
-                    </div>
-    
-                <form id="searchForm" id="search" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex" role="search">
-                    <input type="search" id="searchQuery" name="query" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
-                    <button class="btn btn-dark" type="submit"><img src="images/searchbar.png" alt="search" height="30px"></button>
+                
+                <!--<div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
+                <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='login.html'">Login</button>
+                <button type="button" class="btn btn-warning" onclick="window.location.href='criarconta.html'">Criar Conta</button>
+                    </div>-->
+                    
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3  d-flex " role="search"> 
+                    <button class="btn btn-dark"><img src="/images/searchbar.png" alt="search" height="30px"></button> 
+                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
                 </form>
-    
+
                 <div class="text-end">
-                    <a class="btn btn-dark" href="bilhetes.html"><img src="images/pt-button-01.png" alt="PT" height="38px"> PT</a>
-                    <a class="btn btn-dark" href="bilhetesEng.html"><img src="images/uk-button-01.png" alt="UK" height="38px"> Eng</a>
+                    <a class="btn btn-dark" href="/pages/PT/bilhetes.html"><img src="/images/pt-button-01.png" alt="PT" height="38px"> PT</a>
+                    <a class="btn btn-dark" href="/pages/ENG/bilhetesEng.html"><img src="/images/uk-button-01.png" alt="UK" height="38px"> Eng</a>
                 </div>
             </div>
         </div>
@@ -57,9 +46,9 @@
     <div class="container mt-4">
         <div class="row">
             <div class="col-md-4 mb-4">
-                <a href="louvrePagamentoEng.html" class="text-decoration-none">
+                <a href="/pages/ENG/louvrePagamentoEng.html" class="text-decoration-none">
                     <div class="card museum-card" data-museum="louvre" data-price="20">
-                        <img src="images/museo-louvre.avif" class="card-img-top" alt="Louvre Museum">
+                        <img src="/images/museo-louvre.avif" class="card-img-top" alt="Louvre Museum">
                         <div class="card-body">
                             <h5 class="card-title">Louvre Museum</h5>
                             <p class="card-text">Price: $20</p>
@@ -68,9 +57,9 @@
                 </a>
             </div>
             <div class="col-md-4 mb-4">
-                <a href="britishMuseumPagamentoEng.html" class="text-decoration-none">
+                <a href="/pages/ENG/britishMuseumPagamentoEng.html" class="text-decoration-none">
                     <div class="card museum-card" data-museum="british" data-price="15">
-                        <img src="images/British_Museum_from_NE_2.jpeg" class="card-img-top" alt="British Museum">
+                        <img src="/images/British_Museum_from_NE_2.jpeg" class="card-img-top" alt="British Museum">
                         <div class="card-body">
                             <h5 class="card-title">British Museum</h5>
                             <p class="card-text">Price: $15</p>
@@ -79,9 +68,9 @@
                 </a>
             </div>
             <div class="col-md-4 mb-4">
-                <a href="esposendepagamentoeng.html" class="text-decoration-none">
+                <a href="/pages/ENG/esposendepagamentoeng.html" class="text-decoration-none">
                     <div class="card museum-card" data-museum="esposende" data-price="10">
-                        <img src="images/museuesposende.jpg" class="card-img-top" alt="Esposende Museum">
+                        <img src="/images/museuesposende.jpg" class="card-img-top" alt="Esposende Museum">
                         <div class="card-body">
                             <h5 class="card-title">Esposende Museum</h5>
                             <p class="card-text">Price: $10</p>
@@ -90,9 +79,9 @@
                 </a>
             </div>
             <div class="col-md-4 mb-4">
-                <a href="pradoPagamentoEng.html" class="text-decoration-none">
+                <a href="/pages/ENG/pradoPagamentoEng.html" class="text-decoration-none">
                     <div class="card museum-card" data-museum="prado" data-price="12">
-                        <img src="images/prado.jpg" class="card-img-top" alt="Prado Museum">
+                        <img src="/images/prado.jpg" class="card-img-top" alt="Prado Museum">
                         <div class="card-body">
                             <h5 class="card-title">Prado Museum</h5>
                             <p class="card-text">Price: $12</p>
@@ -101,9 +90,9 @@
                 </a>
             </div>
             <div class="col-md-4 mb-4">
-                <a href="theMetPagamentoEng.html" class="text-decoration-none">
+                <a href="/pages/ENG/theMetPagamentoEng.html" class="text-decoration-none">
                     <div class="card museum-card" data-museum="themet" data-price="16">
-                        <img src="images/themet.jpg" class="card-img-top" alt="The Met">
+                        <img src="/images/themet.jpg" class="card-img-top" alt="The Met">
                         <div class="card-body">
                             <h5 class="card-title">The Met</h5>
                             <p class="card-text">Price: $16</p>
@@ -112,9 +101,9 @@
                 </a>
             </div>
             <div class="col-md-4 mb-4">
-                <a href="museuPalNacionalPagamentoEng.html" class="text-decoration-none">
+                <a href="/pages/ENG/museuPalNacionalPagamentoEng.html" class="text-decoration-none">
                     <div class="card museum-card" data-museum="palnacional" data-price="15">
-                        <img src="images/museupalnacional.jpg" class="card-img-top" alt="National Palace Museum">
+                        <img src="/images/museupalnacional.jpg" class="card-img-top" alt="National Palace Museum">
                         <div class="card-body">
                             <h5 class="card-title">National Palace Museum</h5>
                             <p class="card-text">Price: $15</p>
@@ -123,9 +112,9 @@
                 </a>
             </div>
             <div class="col-md-4 mb-4">
-                <a href="galariaNacionalPagamentoEng.html" class="text-decoration-none">
+                <a href="/pages/ENG/galariaNacionalPagamentoEng.html" class="text-decoration-none">
                     <div class="card museum-card" data-museum="british" data-price="20">
-                        <img src="images/galerialondres.jpg" class="card-img-top" alt="National Gallery">
+                        <img src="/images/galerialondres.jpg" class="card-img-top" alt="National Gallery">
                         <div class="card-body">
                             <h5 class="card-title">National Gallery</h5>
                             <p class="card-text">Price: $20</p>
@@ -134,9 +123,9 @@
                 </a>
             </div>
             <div class="col-md-4 mb-4">
-                <a href="museuDeOrsayPagamentoEng.html" class="text-decoration-none">
+                <a href="/pages/ENG/museuDeOrsayPagamentoEng.html" class="text-decoration-none">
                     <div class="card museum-card" data-museum="Orsay" data-price="12">
-                        <img src="images/museudeorsay.jpg" class="card-img-top" alt="Orsay Museum">
+                        <img src="/images/museudeorsay.jpg" class="card-img-top" alt="Orsay Museum">
                         <div class="card-body">
                             <h5 class="card-title">Orsay Museum</h5>
                             <p class="card-text">Price: $12</p>
@@ -145,9 +134,9 @@
                 </a>
             </div>
             <div class="col-md-4 mb-4">
-                <a href="reinaSofiaPagamentoEng.html" class="text-decoration-none">
+                <a href="/pages/ENG/reinaSofiaPagamentoEng.html" class="text-decoration-none">
                     <div class="card museum-card" data-museum="ReinaSofia" data-price="15">
-                        <img src="images/reinasofia.jpg" class="card-img-top" alt="Reina Sofia Museum">
+                        <img src="/images/reinasofia.jpg" class="card-img-top" alt="Reina Sofia Museum">
                         <div class="card-body">
                             <h5 class="card-title">Reina Sofia Museum</h5>
                             <p class="card-text">Price: $15</p>
@@ -156,9 +145,9 @@
                 </a>
             </div>
             <div class="col-md-4 mb-4">
-                <a href="hermitagepagamentoEng.html" class="text-decoration-none">
+                <a href="/pages/ENG/hermitagepagamentoEng.html" class="text-decoration-none">
                     <div class="card museum-card" data-museum="Hermitage" data-price="9">
-                        <img src="images/hermitage.jpg
+                        <img src="/images/hermitage.jpg
                         " class="card-img-top" alt="Hermitage Museum">
                         <div class="card-body">
                             <h5 class="card-title">Hermitage Museum</h5>
@@ -168,9 +157,9 @@
                 </a>
             </div>
             <div class="col-md-4 mb-4">
-                <a href="museuArteModernaPagamentoEng.html" class="text-decoration-none">
+                <a href="/pages/ENG/museuArteModernaPagamentoEng.html" class="text-decoration-none">
                     <div class="card museum-card" data-museum="ArteModerna" data-price="16">
-                        <img src="images/artemoderna.jpg" class="card-img-top" alt="Museum of Modern Art">
+                        <img src="/images/artemoderna.jpg" class="card-img-top" alt="Museum of Modern Art">
                         <div class="card-body">
                             <h5 class="card-title">Museum of Modern Art</h5>
                             <p class="card-text">Price: $16</p>
@@ -179,9 +168,9 @@
                 </a>
             </div>
             <div class="col-md-4 mb-4">
-                <a href="museuXangaiPagamentoEng.html" class="text-decoration-none">
+                <a href="/pages/ENG/museuXangaiPagamentoEng.html" class="text-decoration-none">
                     <div class="card museum-card" data-museum="Xangai" data-price="18">
-                        <img src="images/museuxangai.jpg" class="card-img-top" alt="Shanghai Museum">
+                        <img src="/images/museuxangai.jpg" class="card-img-top" alt="Shanghai Museum">
                         <div class="card-body">
                             <h5 class="card-title">Shanghai Museum</h5>
                             <p class="card-text">Price: $18</p>
@@ -198,23 +187,8 @@
         </div>
     </footer>
 
-    <script src="js/bootstrap.bundle.js"></script>
-    <script src="script.js"></script>
-    <script>
-        // Add click event for museum cards
-        document.addEventListener('DOMContentLoaded', function() {
-            const museumCards = document.querySelectorAll('.museum-card');
-            museumCards.forEach(card => {
-                card.addEventListener('click', redirectToPayment);
-            });
-        });
-
-        // Function to redirect to the corresponding payment page
-        function redirectToPayment(event) {
-            const museum = event.currentTarget.getAttribute('data-museum');
-            const paymentPage = `${museum}pagamento.html`;
-            window.location.href = paymentPage;
-        }
-    </script>
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="/script.js"></script>
+    <script src="/js/adicionarCarta.js"></script>
 </body>
 </html>
