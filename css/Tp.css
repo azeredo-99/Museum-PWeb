@@ -1,3 +1,6 @@
+.carousel-inner {
+    height: 500px; /* Adjust the height as needed */
+}
 
 .sidebar {
     height: 30vh; /* Full height */
