@@ -24,10 +24,15 @@
                     <li><a href="eventosEng.html" class="nav-link px-2 text-white">Events</a></li>
                     <li><a href="bilheetesEng.html" class="nav-link px-2 text-white">Tickets</a></li>
                 </ul>
-                <!-- Search Bar -->
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3  d-flex " role="search"> 
-                    <button class="btn btn-dark"><img src="images/searchbar.png" alt="search" height="30px"></button> 
-                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+                
+                <div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
+                    <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='login.html'">Login</button>
+                    <button type="button" class="btn btn-warning" onclick="window.location.href='criarconta.html'">Criar Conta</button>
+                    </div>
+    
+                <form id="searchForm" id="search" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex" role="search">
+                    <input type="search" id="searchQuery" name="query" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+                    <button class="btn btn-dark" type="submit"><img src="images/searchbar.png" alt="search" height="30px"></button>
                 </form>
     
                 <div class="text-end">
