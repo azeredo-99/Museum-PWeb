@@ -1,0 +1,17 @@
+/* Add custom styles as needed */
+.museum-card {
+    cursor: pointer;
+}
+.museum-card:hover {
+    transform: scale(1.05);
+}
+.museum-card img {
+    height: 200px; /* Set a fixed height for images */
+    object-fit: cover; /* Ensures the image fills the container while maintaining its proportion */
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px; /* Adjust as needed */
+    object-fit: cover;
+}
