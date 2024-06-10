@@ -4,41 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Museu Reina Sofia</title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/reinasofia.css">
-    <link rel="stylesheet" href="/css/Tp.css">
-    <link rel="stylesheet" href="/css/museums.css">
-    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/reinasofia.css">
+    <link rel="stylesheet" href="css/Tp.css">
+    <style>
+        .main-image, .gallery-image {
+            width: 80%;
+            height: 300px;
+            object-fit: cover;
+        }
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <header class="p-3 text-bg-dark">
         <div class="container-fluid">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a href="/pages/PT/index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <a href="index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                     <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
                 </a>
                 <div class="titulo"> <h1>Artifacts Emporium</h1></div>
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="/pages/PT/index.html" class="nav-link px-2 text-secondary">Home</a></li>
-                    <li><a href="/pages/PT/quemsomos.html" class="nav-link px-2 text-white">Quem Somos</a></li>
-                    <li><a href="/pages/PT/osnossosmuseus.html" class="nav-link px-2 text-white">Os Nossos Museus</a></li>
-                    <li><a href="/pages/PT/eventos.html" class="nav-link px-2 text-white">Eventos</a></li>
-                    <li><a href="/pages/PT/bilhetes.html" class="nav-link px-2 text-white">Bilhetes</a></li>
+                    <li><a href="index.html" class="nav-link px-2 text-secondary">Home</a></li>
+                    <li><a href="quemsomos.html" class="nav-link px-2 text-white">Quem Somos</a></li>
+                    <li><a href="osnossosmuseus.html" class="nav-link px-2 text-white">Os Nossos Museus</a></li>
+                    <li><a href="eventos.html" class="nav-link px-2 text-white">Eventos</a></li>
+                    <li><a href="bilhetes.html" class="nav-link px-2 text-white">Bilhetes</a></li>
                 </ul>
                 
-                <!--<div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
-                <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='login.html'">Login</button>
-                <button type="button" class="btn btn-warning" onclick="window.location.href='criarconta.html'">Criar Conta</button>
-                </div>-->
-                
+                <div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
+                    <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='login.html'">Login</button>
+                    <button type="button" class="btn btn-warning" onclick="window.location.href='criarconta.html'">Criar Conta</button>
+                    </div>
+                    
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3  d-flex " role="search"> 
-                    <button class="btn btn-dark"><img src="/images/searchbar.png" alt="search" height="30px"></button> 
+                    <button class="btn btn-dark"><img src="images/searchbar.png" alt="search" height="30px"></button> 
                     <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
                 </form>
     
                 <div class="text-end">
-                    <a class="btn btn-dark" href="/pages/PT/reinasofia.html"><img src="images/pt-button-01.png" alt="PT" height="38px"> PT</a>
-                    <a class="btn btn-dark" href="/pages/ENG/reinaSofiaEng.html"><img src="images/uk-button-01.png" alt="UK" height="38px"> Eng</a>
+                    <a class="btn btn-dark" href="reinasofia.html"><img src="images/pt-button-01.png" alt="PT" height="38px"> PT</a>
+                    <a class="btn btn-dark" href="reinasofiaEng.html"><img src="images/uk-button-01.png" alt="UK" height="38px"> Eng</a>
                 </div>
             </div>
         </div>
@@ -50,7 +59,7 @@
 
     <!-- Foto centralizada -->
     <div class="text-center">
-        <img src="/images/reinasofia.jpg" class="img-fluid main-image" alt="Museu Reina Sofia">
+        <img src="images/reinasofia.jpg" class="img-fluid main-image" alt="Museu Reina Sofia">
     </div>
     <p>&nbsp;</p> <!-- Espaço após a foto -->
 
@@ -77,13 +86,13 @@
         <h2>Galeria de Fotos</h2>
         <div class="row">
             <div class="col-md-4 mb-4">
-                <img src="/images/reinasofia1.jpg" class="img-fluid gallery-image" alt="Reina Sofia 1">
+                <img src="images/reinasofia1.jpg" class="img-fluid gallery-image" alt="Reina Sofia 1">
             </div>
             <div class="col-md-4 mb-4">
-                <img src="/images/reinasofia2.jpg" class="img-fluid gallery-image" alt="Reina Sofia 2">
+                <img src="images/reinasofia2.jpg" class="img-fluid gallery-image" alt="Reina Sofia 2">
             </div>
             <div class="col-md-4 mb-4">
-                <img src="/images/reinasofia3.jpg" class="img-fluid gallery-image" alt="Reina Sofia 3">
+                <img src="images/reinasofia3.jpg" class="img-fluid gallery-image" alt="Reina Sofia 3">
             </div>
         </div>
     </section>
@@ -126,7 +135,7 @@
         </ul>
     </section>
 
-    <a href="/pages/PT/reinasofiapagamento.html" class="btn btn-primary mt-4">Comprar Bilhetes</a>
+    <a href="bilhetes.html" class="btn btn-primary mt-4">Comprar Bilhetes</a>
 </div>
 
 <footer class="bg-light py-4 mt-5">
@@ -135,9 +144,9 @@
     </div>
 </footer>
 
-<script src="/js/bootstrap.bundle.js"></script>
+<script src="js/bootstrap.bundle.js"></script>
 <!-- Insira sua chave de API do Google Maps aqui -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBhLbHnR1ELOgwjUHGh8xj-9gKGcWTkDU&callback=initMap" async defer></script>
-<script src="/js/reinasofia.js"></script>
+<script src="js/reinasofia.js"></script>
 </body>
 </html>
