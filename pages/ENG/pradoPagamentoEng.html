@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Purchase - Prado Museum</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/Tp.css">
+</head>
+<body>
+    <header class="p-3 text-bg-dark">
+        <div class="container-fluid">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/pages/ENG/index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+                </a>
+                <div class="titulo"> <h1>Artifacts Emporium</h1></div>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="/pages/ENG/indexEng.html" class="nav-link px-2 text-secondary">Home</a></li>
+                    <li><a href="/pages/ENG/quemSomosEng.html" class="nav-link px-2 text-white">About Us</a></li>
+                    <li><a href="/pages/ENG/osNossosMuseusEng.html" class="nav-link px-2 text-white">Our Museums</a></li>
+                    <li><a href="/pages/ENG/eventosEng.html" class="nav-link px-2 text-white">Events</a></li>
+                    <li><a href="/pages/ENG/bilhetesEng.html" class="nav-link px-2 text-white">Tickets</a></li>
+                </ul>
+                
+                <!--<div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
+                <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='login.html'">Login</button>
+                <button type="button" class="btn btn-warning" onclick="window.location.href='criarconta.html'">Criar Conta</button>
+                </div>-->
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3  d-flex " role="search"> 
+                    <button class="btn btn-dark"><img src="/images/searchbar.png" alt="search" height="30px"></button> 
+                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+                </form>
+    
+                <div class="text-end">
+                    <a class="btn btn-dark" href="/pages/PT/pradopagamento.html"><img src="/images/pt-button-01.png" alt="PT" height="38px"> PT</a>
+                    <a class="btn btn-dark" href="/pages/ENG/pradoPagamentoEng.html"><img src="/images/uk-button-01.png" alt="UK" height="38px"> Eng</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mt-5">
+        <h1>Ticket Purchase - Prado Museum</h1>
+        <form id="ticketForm">
+            <div class="mb-3">
+                <label for="ticketType" class="form-label">Ticket Type</label>
+                <select class="form-select" id="ticketType">
+                    <option selected>Select ticket type...</option>
+                    <option value="normal">Normal ($12)</option>
+                    <option value="child">Child (Free up to 12 years)</option>
+                    <option value="senior">Senior (Free for over 65 years)</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="visitDate" class="form-label">Visit Date</label>
+                <input type="date" class="form-control" id="visitDate">
+            </div>
+            <div class="mb-3">
+                <label for="numberOfTickets" class="form-label">Number of Tickets</label>
+                <input type="number" class="form-control" id="numberOfTickets" min="1" value="1">
+            </div>
+            <button type="button" class="btn btn-primary" id="addToCartBtn">Add to Cart</button>
+        </form>
+    </div>
+
+    <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            &copy; 2024 Artifacts Emporium. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="/js/adicionarCarrinhoEng.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>British Museum</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/british_museum.css">
+    <link rel="stylesheet" href="/css/Tp.css">
+    <link rel="stylesheet" href="/css/museums.css">
+    
+</head>
+<body>
+    <header class="p-3 text-bg-dark">
+        <div class="container-fluid">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/pages/PT/index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+                </a>
+                <div class="titulo"> <h1>Artifacts Emporium</h1></div>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="/pages/PT/index.html" class="nav-link px-2 text-secondary">Home</a></li>
+                    <li><a href="/pages/PT/quemsomos.html" class="nav-link px-2 text-white">Quem Somos</a></li>
+                    <li><a href="/pages/PT/osnossosmuseus.html" class="nav-link px-2 text-white">Os Nossos Museus</a></li>
+                    <li><a href="/pages/PT/eventos.html" class="nav-link px-2 text-white">Eventos</a></li>
+                    <li><a href="/pages/PT/bilhetes.html" class="nav-link px-2 text-white">Bilhetes</a></li>
+                </ul>
+                
+                <!--<div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
+                <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='login.html'">Login</button>
+                <button type="button" class="btn btn-warning" onclick="window.location.href='criarconta.html'">Criar Conta</button>
+                </div>-->
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3  d-flex " role="search"> 
+                    <button class="btn btn-dark"><img src="/images/searchbar.png" alt="search" height="30px"></button> 
+                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+                </form>
+    
+                <div class="text-end">
+                    <a class="btn btn-dark" href="/pages/PT/british_museum.html"><img src="/images/pt-button-01.png" alt="PT" height="38px"> PT</a>
+                    <a class="btn btn-dark" href="/pages/ENG/britishMuseumEng.html"><img src="/images/uk-button-01.png" alt="UK" height="38px"> Eng</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<div class="container mt-5">
+    <h1 class="text-center">British Museum</h1>
+    <p>&nbsp;</p> <!-- Espaço após o título -->
+
+    <!-- Foto centralizada -->
+    <div class="text-center">
+        <img src="/images/bm.jpg" class="img-fluid main-image" alt="British Museum">
+    </div>
+    <p>&nbsp;</p> <!-- Espaço após a foto -->
+
+    <!-- Descrição -->
+    <section id="descricao">
+        <h2>Descrição</h2>
+        <p>O Museu Britânico é dedicado à história e à cultura da humanidade, com uma vasta coleção de artefatos de todo o mundo.</p>
+    </section>
+
+    <!-- História -->
+    <section id="historia">
+        <h2>História</h2>
+        <p>O Museu Britânico foi fundado em 1753, tornando-se o primeiro museu nacional público do mundo. Atualmente, possui uma das maiores e mais abrangentes coleções de artefatos do mundo, com mais de 8 milhões de obras em sua posse.</p>
+    </section>
+
+    <!-- Mapa -->
+    <section id="mapa">
+        <h2>Mapa</h2>
+        <div id="map"></div>
+    </section>
+
+    <!-- Galeria de Fotos -->
+    <section id="galeria">
+        <h2>Galeria de Fotos</h2>
+        <p>&nbsp;</p>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <img src="/images/british_museum1.jpg" class="img-fluid gallery-image" alt="British Museum 1">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="/images/britishmuseum.jpg" class="img-fluid gallery-image" alt="British Museum 2">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="/images/evento4.jpg" class="img-fluid gallery-image" alt="British Museum 3">
+            </div>
+        </div>
+    </section>
+
+    <!-- Avaliações -->
+    <section id="avaliacoes">
+        <h2>Avaliações</h2>
+        <div id="reviews">
+            <div class="review">
+                <p><strong>Maria S.</strong>: Adorei a visita! 5/5</p>
+            </div>
+            <div class="review">
+                <p><strong>João P.</strong>: Interessante e informativo. 4/5</p>
+            </div>
+        </div>
+        <form id="reviewForm">
+            <div class="mb-3">
+                <label for="reviewName" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="reviewName">
+            </div>
+            <div class="mb-3">
+                <label for="reviewText" class="form-label">Avaliação</label>
+                <textarea class="form-control" id="reviewText" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar Avaliação</button>
+        </form>
+    </section>
+<p></p>
+    <!-- Catálogo de Obras -->
+    <section id="catalogo">
+        <h2>Catálogo de Obras</h2>
+        <ul>
+            <li>Stonehenge</li>
+            <li>Elgin Marbles</li>
+            <li>Rosetta Stone</li>
+            <li>Memnon Mais Jovem</li>
+            <li>Múmia de Katebet</li>
+            <li> Tesouro Oxus</li>
+          
+            <!-- Adicione mais obras aqui -->
+        </ul>
+    </section>
+
+    <a href="/pages/PT/britishmuseumpagamento.html" class="btn btn-primary mt-4">Comprar Bilhetes</a>
+</div>
+
+<footer class="bg-light py-4 mt-5">
+    <div class="container text-center">
+        &copy; 2024 Artifacts Emporium. Todos os direitos reservados.
+    </div>
+</footer>
+
+<script src="/js/bootstrap.bundle.js"></script>
+<!-- Insira sua chave de API do Google Maps aqui -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBhLbHnR1ELOgwjUHGh8xj-9gKGcWTkDU&callback=initMap" async defer></script>
+<script src="/js/british_museum.js"></script>
+</body>
+</html>
+

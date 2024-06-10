@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London's National Gallery</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/galerianacional.css">
+    <link rel="stylesheet" href="/css/Tp.css">
+    <link rel="stylesheet" href="/css/museums.css">
+    
+</head>
+<body>
+    <header class="p-3 text-bg-dark">
+        <div class="container-fluid">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/pages/ENG/index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+                </a>
+                <div class="titulo"> <h1>Artifacts Emporium</h1></div>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="/pages/ENG/indexEng.html" class="nav-link px-2 text-secondary">Home</a></li>
+                    <li><a href="/pages/ENG/quemSomosEng.html" class="nav-link px-2 text-white">About Us</a></li>
+                    <li><a href="/pages/ENG/osNossosMuseusEng.html" class="nav-link px-2 text-white">Our Museums</a></li>
+                    <li><a href="/pages/ENG/eventosEng.html" class="nav-link px-2 text-white">Events</a></li>
+                    <li><a href="/pages/ENG/bilhetesEng.html" class="nav-link px-2 text-white">Tickets</a></li>
+                </ul>
+                
+                <!--<div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
+                    <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='login.html'">Login</button>
+                    <button type="button" class="btn btn-warning" onclick="window.location.href='criarconta.html'">Criar Conta</button>
+                    </div>-->
+    
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3  d-flex " role="search"> 
+                    <button class="btn btn-dark"><img src="/images/searchbar.png" alt="search" height="30px"></button> 
+                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+                </form>
+    
+                <div class="text-end">
+                    <a class="btn btn-dark" href="/pages/PT/galerianacional.html"><img src="/images/pt-button-01.png" alt="PT" height="38px"> PT</a>
+                    <a class="btn btn-dark" href="/pages/ENG/galeriaNacionalEng.html"><img src="/images/uk-button-01.png" alt="UK" height="38px"> Eng</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<div class="container mt-5">
+    <h1 class="text-center">London's National Gallery</h1>
+    <p>&nbsp;</p> <!-- Espaço após o título -->
+
+    <!-- Foto centralizada -->
+    <div class="text-center">
+        <img src="/images/galerialondres.jpg" class="img-fluid main-image" alt="Galeria Nacional de Londres">
+    </div>
+    <p>&nbsp;</p> <!-- Espaço após a foto -->
+
+    <!-- Descrição -->
+    <section id="descricao">
+        <h2>Description</h2>
+        <p>The National Gallery is an art museum in Trafalgar Square, in the centre of London. Founded in 1824, it houses a collection of more than 2,300 paintings dating from the 13th to the early 20th century.</p>
+    </section>
+    <p></p>
+    <!-- História -->
+    <section id="historia">
+        <h2>History</h2>
+        <p>The National Gallery was founded in 1824 after the British government bought 38 paintings belonging to the banker John Julius Angerstein. The collection has grown over the years with various donations and acquisitions.</p>
+    </section>
+
+    <!-- Mapa -->
+    <section id="mapa">
+        <h2>Map</h2>
+        <div id="map"></div>
+    </section>
+
+    <!-- Galeria de Fotos -->
+    <section id="galeria">
+        <h2>Photo Gallery</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <img src="/images/galerianacional1.jpg" class="img-fluid gallery-image" alt="Galeria Nacional 1">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="/images/galerianacional2.jpg" class="img-fluid gallery-image" alt="Galeria Nacional 2">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="/images/galerianacional3.jpg" class="img-fluid gallery-image" alt="Galeria Nacional 3">
+            </div>
+        </div>
+    </section>
+
+    <!-- Avaliações -->
+    <section id="avaliacoes">
+        <h2>Reviews</h2>
+        <div id="reviews">
+            <div class="review">
+                <p><strong>Maria S.</strong>: A fascinating place for any art lover! 5/5</p>
+            </div>
+            <div class="review">
+                <p><strong>João P.</strong>: Impressive collection and very well organised. 4/5</p>
+            </div>
+        </div>
+        <form id="reviewForm">
+            <div class="mb-3">
+                <label for="reviewName" class="form-label">Name</label>
+                <input type="text" class="form-control" id="reviewName">
+            </div>
+            <div class="mb-3">
+                <label for="reviewText" class="form-label">Evaluation</label>
+                <textarea class="form-control" id="reviewText" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send evaluation</button>
+        </form>
+    </section>
+
+    <!-- Catálogo de Obras -->
+    <section id="catalogo">
+        <h2>Catalogue of Works</h2>
+        <ul>
+            <li>The Virgin of the Rocks - Leonardo da Vinci</li>
+            <li>The Ambassadors - Hans Holbein</li>
+            <li>Ripe Wheat - Vincent van Gogh</li>
+            <li>The Supper at Emmaus - Caravaggio</li>
+            <li>The Sunflowers - Vincent van Gogh</li>
+            <li>Venus in the Mirror - Diego Velázquez</li>
+            <!-- Adicione mais obras aqui -->
+        </ul>
+    </section>
+
+    <a href="/pages/ENG/galariaNacionalPagamentoEng.html" class="btn btn-primary mt-4">Buy Tickets</a>
+</div>
+
+<footer class="bg-light py-4 mt-5">
+    <div class="container text-center">
+        &copy; 2024 Artifacts Emporium. All rights reserved.
+    </div>
+</footer>
+
+<script src="/js/bootstrap.bundle.js"></script>
+<!-- Insira sua chave de API do Google Maps aqui -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBhLbHnR1ELOgwjUHGh8xj-9gKGcWTkDU&callback=initMap" async defer></script>
+<script src="/js/galariaNacionalEng.js"></script>
+</body>
+</html>

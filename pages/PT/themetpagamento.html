@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra de Bilhetes - Museu do Louvre</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/Tp.css">
+</head>
+<body>
+    <header class="p-3 text-bg-dark">
+        <div class="container-fluid">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/pages/PT/index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+                </a>
+                <div class="titulo"> <h1>Artifacts Emporium</h1></div>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="/pages/PT/index.html" class="nav-link px-2 text-secondary">Home</a></li>
+                    <li><a href="/pages/PT/quemsomos.html" class="nav-link px-2 text-white">Quem Somos</a></li>
+                    <li><a href="/pages/PT/osnossosmuseus.html" class="nav-link px-2 text-white">Os Nossos Museus</a></li>
+                    <li><a href="/pages/PT/eventos.html" class="nav-link px-2 text-white">Eventos</a></li>
+                    <li><a href="/pages/PT/bilhetes.html" class="nav-link px-2 text-white">Bilhetes</a></li>
+                </ul>
+                
+                <!--<div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
+                <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='login.html'">Login</button>
+                <button type="button" class="btn btn-warning" onclick="window.location.href='criarconta.html'">Criar Conta</button>
+                </div>-->
+                
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3  d-flex " role="search"> 
+                    <button class="btn btn-dark"><img src="/images/searchbar.png" alt="search" height="30px"></button> 
+                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+                </form>
+    
+                <div class="text-end">
+                    <a class="btn btn-dark" href="/pages/PT/themetpagamento.html"><img src="/images/pt-button-01.png" alt="PT" height="38px"> PT</a>
+                    <a class="btn btn-dark" href="/pages/PT/themetpagamento.html"><img src="/images/uk-button-01.png" alt="UK" height="38px"> Eng</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mt-5">
+        <h1>Compra de Bilhetes - The Met</h1>
+        <form id="ticketForm">
+            <div class="mb-3">
+                <label for="ticketType" class="form-label">Tipo de Bilhete</label>
+                <select class="form-select" id="ticketType">
+                    <option selected>Selecione o tipo de bilhete...</option>
+                    <option value="normal">Normal ($16)</option>
+                    <option value="crianca">Criança (Grátis até 12 anos)</option>
+                    <option value="idoso">Idoso (Grátis para maiores de 65 anos)</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="visitDate" class="form-label">Data da Visita</label>
+                <input type="date" class="form-control" id="visitDate">
+            </div>
+            <div class="mb-3">
+                <label for="numberOfTickets" class="form-label">Número de Bilhetes</label>
+                <input type="number" class="form-control" id="numberOfTickets" min="1" value="1">
+            </div>
+            <button type="button" class="btn btn-primary" id="addToCartBtn">Adicionar ao Carrinho</button>
+        </form>
+    </div>
+
+    <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            &copy; 2024 Artifacts Emporium. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="/js/adicionarCarrinho.js"></script>
+</body>
+</html>
