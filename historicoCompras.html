@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Tp.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Histórico de Compras - Artifacts Emporium</title>
+</head>
+<body>
+    <header class="p-3 text-bg-dark">
+        <div class="container-fluid">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+                </a>
+                <div class="titulo"> <h1>Artifacts Emporium</h1></div>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="index.html" class="nav-link px-2 text-secondary">Home</a></li>
+                    <li><a href="quemsomos.html" class="nav-link px-2 text-white">Quem Somos</a></li>
+                    <li><a href="osnossosmuseus.html" class="nav-link px-2 text-white">Os Nossos Museus</a></li>
+                    <li><a href="eventos.html" class="nav-link px-2 text-white">Eventos</a></li>
+                    <li><a href="bilhetes.html" class="nav-link px-2 text-white">Bilhetes</a></li>
+                </ul>
+                
+                <div class="col-12 col-lg-auto mb-3 mt-2 mb-lg-0 me-lg-3 " id="user-controls">
+                    <!-- Este espaço será preenchido pelo JavaScript -->
+                </div>
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex" role="search"> 
+                    <button class="btn btn-dark"><img src="images/searchbar.png" alt="search" height="30px"></button> 
+                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mt-5">
+        <h1>Histórico de Compras</h1>
+        <div id="purchaseHistory" class="mt-4"></div>
+    </div>
+
+    <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            &copy; 2024 Artifacts Emporium. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.js"></script>
+    <script>
+        window.onload = async function() {
+            const token = localStorage.getItem('token');
+            const username = localStorage.getItem('username');
+            const userControls = document.getElementById('user-controls');
+
+            if (token && username) {
+                userControls.innerHTML = `
+                   <a href="historicoCompras.html" class="username-link text-white h3">${username}</a>
+                    <button class="btn btn-danger mb-2 ms-2" onclick="logout()">Logout</button>
+                `;
+            } else {
+                window.location.href = 'login.html';
+            }
+
+            try {
+                const response = await fetch('http://localhost:3000/purchase-history', {
+                    headers: {
+                        'Authorization': token
+                    }
+                });
+
+                const data = await response.json();
+                if (data.message === 'success') {
+                    const purchaseHistory = document.getElementById('purchaseHistory');
+                    if (data.data.length > 0) {
+                        data.data.forEach(purchase => {
+                            const purchaseInfo = `<p><strong>Item:</strong> ${purchase.item_name}, <strong>Data:</strong> ${purchase.purchase_date}</p>`;
+                            purchaseHistory.innerHTML += purchaseInfo;
+                        });
+                    } else {
+                        purchaseHistory.innerHTML = '<p>Não há compras registradas.</p>';
+                    }
+                } else {
+                    console.error('Erro ao obter histórico de compras:', data.error);
+                }
+            } catch (error) {
+                console.error('Erro ao obter histórico de compras:', error.message);
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('username');
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

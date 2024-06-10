@@ -1,7 +1,7 @@
 document.getElementById('registrationForm').addEventListener('submit', async function (event) {
     event.preventDefault();
 
-    const nome = document.getElementById('newUsername').value;
+    const username = document.getElementById('newUsername').value;
     const email = document.getElementById('email').value;
     const password = document.getElementById('newPassword').value;
     const messageElement = document.getElementById('registrationMessage');
@@ -12,7 +12,7 @@ document.getElementById('registrationForm').addEventListener('submit', async fun
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ nome, email, password })
+            body: JSON.stringify({ username, email, password })
         });
         
         const data = await response.json();
