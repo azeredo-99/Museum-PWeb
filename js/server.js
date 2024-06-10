@@ -206,6 +206,57 @@ app.get('/get-visits-this-month', (req, res) => {
     });
 });
 
+
+// Endpoint para obter dados dos museus
+app.get('/get-museums', (req, res) => {
+    const sql = "SELECT * FROM Museu";
+    db.all(sql, [], (err, rows) => {
+        if (err) {
+            res.status(500).json({ message: 'error', error: err.message });
+        } else {
+            res.json({ message: 'success', data: rows });
+        }
+    });
+});
+
+// Endpoint para obter bilhetes de um museu específico
+app.get('/get-tickets/:id_museu', (req, res) => {
+    const museuId = req.params.id_museu;
+    const sql = "SELECT * FROM Bilhetes WHERE fk_id_museu = ?";
+
+    db.all(sql, [museuId], (err, rows) => {
+        if (err) {
+            res.status(500).json({ message: 'error', error: err.message });
+        } else {
+            res.json({ message: 'success', data: rows });
+        }
+    });
+});
+
+// Endpoint para obter dados de um museu específico e seus bilhetes
+app.get('/get-museum/:id', (req, res) => {
+    const museuId = req.params.id;
+    const museuSql = "SELECT * FROM Museu WHERE pk_id_museu = ?";
+    const bilhetesSql = "SELECT * FROM Bilhetes WHERE fk_id_museu = ?";
+
+    db.get(museuSql, [museuId], (err, museuRow) => {
+        if (err) {
+            return res.status(500).json({ message: 'error', error: err.message });
+        } else if (!museuRow) {
+            return res.status(404).json({ message: 'error', error: 'Museu não encontrado' });
+        } else {
+            db.all(bilhetesSql, [museuId], (err, bilhetesRows) => {
+                if (err) {
+                    return res.status(500).json({ message: 'error', error: err.message });
+                } else {
+                    res.json({ message: 'success', data: { museu: museuRow, bilhetes: bilhetesRows } });
+                }
+            });
+        }
+    });
+});
+
+
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });

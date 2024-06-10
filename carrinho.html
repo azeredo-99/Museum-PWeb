@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/Tp.css">
 </head>
 <body>
-
     <header class="p-3 text-bg-dark">
         <div class="container-fluid">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -23,15 +22,10 @@
                     <li><a href="eventos.html" class="nav-link px-2 text-white">Eventos</a></li>
                     <li><a href="bilhetes.html" class="nav-link px-2 text-white">Bilhetes</a></li>
                 </ul>
-    
-                <div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
-                    <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='login.html'">Login</button>
-                    <button type="button" class="btn btn-warning" onclick="window.location.href='criarconta.html'">Criar Conta</button>
-                    </div>
-    
-                <form id="searchForm" id="search" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex" role="search">
-                    <input type="search" id="searchQuery" name="query" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
-                    <button class="btn btn-dark" type="submit"><img src="images/searchbar.png" alt="search" height="30px"></button>
+                
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex" role="search"> 
+                    <button class="btn btn-dark"><img src="images/searchbar.png" alt="search" height="30px"></button> 
+                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
                 </form>
     
                 <div class="text-end">
@@ -47,6 +41,7 @@
         <div id="ticketDetails">
             <!-- As informações do bilhete selecionado serão exibidas aqui -->
         </div>
+        <button type="button" class="btn btn-success mt-3" id="confirmPurchaseBtn">Confirmar Compra</button>
     </div>
 
     <footer class="bg-light py-4 mt-5">
@@ -61,7 +56,7 @@
         function exibirDetalhesDoBilhete(ticketDetails) {
             const ticketDetailsDiv = document.getElementById('ticketDetails');
             ticketDetailsDiv.innerHTML = `
-                <p><strong>Tipo de Bilhete:</strong> ${ticketDetails.type}</p>
+                <p><strong>Tipo de Bilhete:</strong> ${ticketDetails.tipo}</p>
                 <p><strong>Data da Visita:</strong> ${ticketDetails.date}</p>
                 <p><strong>Número de Bilhetes:</strong> ${ticketDetails.quantity}</p>
             `;
@@ -80,6 +75,32 @@
         
         // Exibe os detalhes do bilhete no carrinho
         exibirDetalhesDoBilhete(ticketDetails);
+
+        // Função para enviar os detalhes da compra para o backend
+        document.getElementById('confirmPurchaseBtn').addEventListener('click', () => {
+            fetch('http://localhost:3000/save-purchase', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(ticketDetails)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message === 'success') {
+                    alert('Compra confirmada com sucesso!');
+                    // Redireciona para a página inicial ou outra página de sua escolha
+                    window.location.href = 'index.html';
+                } else {
+                    alert('Erro ao confirmar a compra. Tente novamente.');
+                }
+            })
+            .catch(error => {
+                console.error('Erro ao confirmar a compra:', error);
+                alert('Erro ao confirmar a compra. Tente novamente.');
+            });
+        });
     </script>
+    <script src="js/search.js"></script>
 </body>
 </html>
