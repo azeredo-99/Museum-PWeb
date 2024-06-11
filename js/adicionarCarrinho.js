@@ -3,7 +3,7 @@
     // Aqui você pode implementar a lógica para adicionar os bilhetes ao carrinho
     console.log('Ticket added to basket:', ticketDetails);
     // Redireciona para a página do carrinho
-    window.location.href = '/pages/ENG/carrinhoEng.html';
+    window.location.href = '/pages/PT/carrinho.html';
 }
 
 // Evento de clique no botão "Adicionar ao Carrinho"
