@@ -1,11 +1,12 @@
+<!-- dashboard.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compra de Bilhetes - British Museum</title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/Tp.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>Dashboard - Artifacts Emporium</title>
 </head>
 <body>
     <header class="p-3 text-bg-dark">
@@ -21,6 +22,7 @@
                     <li><a href="/pages/PT/osnossosmuseus.html" class="nav-link px-2 text-white">Os Nossos Museus</a></li>
                     <li><a href="/pages/PT/eventos.html" class="nav-link px-2 text-white">Eventos</a></li>
                     <li><a href="/pages/PT/bilhetes.html" class="nav-link px-2 text-white">Bilhetes</a></li>
+                    <li><a href="/pages/PT/dashboard.html" class="nav-link px-2 text-white">Dashboard</a></li>
                 </ul>
                 
                 <div id="user-controls" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
@@ -33,36 +35,17 @@
                     <button class="btn btn-dark" type="submit"><img src="/images/searchbar.png" alt="search" height="30px"></button>
                 </form>
     
-                <div class="text-end">
-                    <a class="btn btn-dark" href="/pages/PT/britishmuseumpagamento.html"><img src="/images/pt-button-01.png" alt="PT" height="38px"> PT</a>
-                    <a class="btn btn-dark" href="/pages/ENG/britishMuseumPagamentoEng.html"><img src="/images/uk-button-01.png" alt="UK" height="38px"> Eng</a>
-                </div>
+                
             </div>
         </div>
     </header>
 
     <div class="container mt-5">
-        <h1>Compra de Bilhetes - British Museum</h1>
-        <form id="ticketForm">
-            <div class="mb-3">
-                <label for="ticketType" class="form-label">Tipo de Bilhete</label>
-                <select class="form-select" id="ticketType">
-                    <option selected>Selecione o tipo de bilhete...</option>
-                    <option value="normal">Normal ($15)</option>
-                    <option value="crianca">Criança (Grátis até 12 anos)</option>
-                    <option value="idoso">Idoso (Grátis para maiores de 65 anos)</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="visitDate" class="form-label">Data da Visita</label>
-                <input type="date" class="form-control" id="visitDate">
-            </div>
-            <div class="mb-3">
-                <label for="numberOfTickets" class="form-label">Número de Bilhetes</label>
-                <input type="number" class="form-control" id="numberOfTickets" min="1" value="1">
-            </div>
-            <button type="submit" class="btn btn-primary">Adicionar ao Carrinho</button>
-        </form>
+        <h1>Dashboard</h1>
+        <div id="visitCount" class="mt-4">
+            <h2>Total de Visitas: <span id="visitCounter">0</span></h2>
+            <h2>Visitas deste Mês: <span id="visitCounterMonth">0</span></h2>
+        </div>
     </div>
 
     <footer class="bg-light py-4 mt-5">
@@ -72,6 +55,30 @@
     </footer>
 
     <script src="/js/bootstrap.bundle.js"></script>
-    <script src="/js/adicionarCarrinho.js"></script>
+    <script>
+        window.onload = function() {
+            fetch('http://localhost:3000/get-visits')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.message === 'success') {
+                        document.getElementById('visitCounter').textContent = data.data;
+                    } else {
+                        console.error('Erro ao obter contagem de visitas:', data.error);
+                    }
+                })
+                .catch(error => console.error('Erro ao obter contagem de visitas:', error));
+
+            fetch('http://localhost:3000/get-visits-this-month')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.message === 'success') {
+                        document.getElementById('visitCounterMonth').textContent = data.data;
+                    } else {
+                        console.error('Erro ao obter contagem de visitas deste mês:', data.error);
+                    }
+                })
+                .catch(error => console.error('Erro ao obter contagem de visitas deste mês:', error));
+        };
+    </script>
 </body>
 </html>

@@ -24,15 +24,17 @@
                 <li><a href="/pages/PT/osnossosmuseus.html" class="nav-link px-2 text-white">Os Nossos Museus</a></li>
                 <li><a href="/pages/PT/eventos.html" class="nav-link px-2 text-white">Eventos</a></li>
                 <li><a href="/pages/PT/bilhetes.html" class="nav-link px-2 text-white">Bilhetes</a></li>
+                <li><a href="/pages/PT/dashboard.html" class="nav-link px-2 text-white">Dashboard</a></li>
+
             </ul>
             
-            <!--<div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
-                <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='login.html'">Login</button>
-                <button type="button" class="btn btn-warning" onclick="window.location.href='criarconta.html'">Criar Conta</button>
-            </div>-->
+            <div id="user-controls" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
+                <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='/pages/PT/login.html'">Login</button>
+                <button type="button" class="btn btn-warning" onclick="window.location.href='/pages/PT/criarconta.html'">Criar Conta</button>
+            </div>
 
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex" role="search" action="search.php" method="GET">
-                <input type="search" name="query" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+            <form id="searchForm" id="search" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex" role="search">
+                <input type="search" id="searchQuery" name="query" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
                 <button class="btn btn-dark" type="submit"><img src="/images/searchbar.png" alt="search" height="30px"></button>
             </form>
             
@@ -79,12 +81,70 @@
     </div>
 </div>
 
+<div class="container mt-4">
+    <audio controls>
+        <source src="audio/background-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</div>
+
+<div id="searchResults" class="container mt-4">
+    <button id="reload-button" class="btn btn-primary">Reload</button>
+</div>
+
 <footer class="bg-light py-4">
     <div class="container text-center">
         &copy; 2024 Artifacts Emporium. Todos os direitos reservados.
     </div>
 </footer>
 
-<script src="js/bootstrap.bundle.js"></script>
+<script src="/js/bootstrap.bundle.js"></script>
+<script src="/js/search.js"></script>
+<script>
+    window.onload = function() {
+        const token = localStorage.getItem('token');
+        const username = localStorage.getItem('username');
+        const userControls = document.getElementById('user-controls');
+
+        if (token && username) {
+            userControls.className = 'col-12 col-lg-auto mb-3 mt-2 mb-lg-0 me-lg-3';
+            userControls.innerHTML = `
+                <a href="historicoCompras.html" class="username-link text-white h3">${username}</a>
+                <button class="btn btn-danger mb-2 ms-2" onclick="logout()">Logout</button>
+            `;
+        }
+
+        // Add event listener to the reload button
+        const reloadButton = document.getElementById('reload-button');
+        reloadButton.addEventListener('click', reloadPage);
+    };
+
+    async function incrementVisit() {
+        try {
+            const response = await fetch('http://localhost:3000/increment-visit');
+            const data = await response.json();
+            if (data.message !== 'success') {
+                console.error('Erro ao incrementar visitas:', data.error);
+            } else {
+                console.log('Visitas incrementadas com sucesso.');
+            }
+        } catch (error) {
+            console.error('Erro ao incrementar visitas:', error);
+        }
+    }
+
+    function reloadPage() {
+        incrementVisit().then(() => {
+            window.location.reload();
+        });
+    }
+
+    function logout() {
+        localStorage.removeItem('token');
+        localStorage.removeItem('username');
+        window.location.href = 'login.html';
+    }
+</script>
+
 </body>
 </html>

@@ -25,14 +25,14 @@
                     <li><a href="/pages/PT/bilhetes.html" class="nav-link px-2 text-white">Bilhetes</a></li>
                 </ul>
                 
-                <!--<div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
-                <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='login.html'">Login</button>
-                <button type="button" class="btn btn-warning" onclick="window.location.href='criarconta.html'">Criar Conta</button>
-                    </div>-->
-
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3  d-flex " role="search"> 
-                    <button class="btn btn-dark"><img src="/images/searchbar.png" alt="search" height="30px"></button> 
-                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+                <div id="user-controls" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
+                    <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='/pages/PT/login.html'">Login</button>
+                    <button type="button" class="btn btn-warning" onclick="window.location.href='/pages/PT/criarconta.html'">Criar Conta</button>
+                </div>
+    
+                <form id="searchForm" id="search" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex" role="search">
+                    <input type="search" id="searchQuery" name="query" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+                    <button class="btn btn-dark" type="submit"><img src="/images/searchbar.png" alt="search" height="30px"></button>
                 </form>
     
                 <div class="text-end">
@@ -186,7 +186,72 @@
     </footer>
 
     <script src="/js/bootstrap.bundle.js"></script>
-    <script src="/script.js"></script>
+    <script src="/js/search.js"></script>
     <script src="/js/adicionarCarta.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('http://localhost:3000/get-museums')
+                .then(response => response.json())
+                .then(data => {
+                    const museumCardsContainer = document.getElementById('museumCardsContainer');
+        
+                    // Verifica se 'data.data' é um array antes de iterar sobre ele
+                    if (Array.isArray(data.data)) {
+                        // Ordena os museus pelo pk_id_museu
+                        const sortedMuseums = data.data.sort((a, b) => a.pk_id_museu - b.pk_id_museu);
+        
+                        // Função auxiliar para criar e adicionar um card ao container
+                        const addMuseumCard = (museum) => {
+                            // Busca os bilhetes correspondentes ao museu atual, filtrando apenas os bilhetes do tipo normal
+                            fetch(`http://localhost:3000/get-tickets/${museum.pk_id_museu}`)
+                                .then(response => response.json())
+                                .then(responseData => {
+                                    // Verifica se a resposta é válida e se contém a propriedade 'data'
+                                    if (responseData && responseData.message === 'success' && Array.isArray(responseData.data)) {
+                                        const normalTickets = responseData.data.filter(ticket => ticket.tipo === 'normal');
+        
+                                        // Cria um card para o museu com base nos bilhetes do tipo normal obtidos
+                                        const card = document.createElement('div');
+                                        card.className = 'col-md-4 mb-4';
+                                        card.innerHTML = `
+                                            <a href="comprabilhetes.html?museu=${museum.pk_id_museu}" class="text-decoration-none">
+                                                <div class="card museum-card" data-museum="${museum.nome}">
+                                                    <img src="${museum.imagem}" class="card-img-top" alt="${museum.nome}">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">${museum.nome}</h5>
+                                                        <p class="card-text">Bilhetes normais disponíveis:</p>
+                                                        <ul>
+                                                            ${normalTickets.map(ticket => `<li>Valor: $${ticket.preco}</li>`).join('')}
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </a>`;
+        
+                                        // Adiciona o card ao container na ordem correta
+                                        museumCardsContainer.appendChild(card);
+                                    } else {
+                                        console.error('Resposta inválida ou dados de bilhetes ausentes:', responseData);
+                                    }
+                                })
+                                .catch(error => {
+                                    console.error('Erro ao buscar bilhetes:', error);
+                                });
+                        };
+        
+                        // Adiciona os cards na ordem dos museus ordenados
+                        sortedMuseums.forEach(museum => {
+                            addMuseumCard(museum);
+                        });
+                    } else {
+                        console.error('Dados retornados não contêm um array de museus:', data);
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro ao buscar museus:', error);
+                });
+        });
+        
+        
+            </script>
 </body>
 </html>

@@ -28,16 +28,15 @@
                     <li><a href="/pages/PT/eventos.html" class="nav-link px-2 text-white">Eventos</a></li>
                     <li><a href="/pages/PT/bilhetes.html" class="nav-link px-2 text-white">Bilhetes</a></li>
                 </ul>
-                <!-- Barra de Pesquisa -->
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3  d-flex " role="search"> 
-                    <button class="btn btn-dark"><img src="/images/searchbar.png" alt="search" height="30px"></button> 
-                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
-                </form>
-                <!-- Botões de Idioma -->
-                <div class="text-end">
-                    <a class="btn btn-dark" href="/pages/PT/esposende.html"><img src="/images/pt-button-01.png" alt="PT" height="38px"> PT</a>
-                    <a class="btn btn-dark" href="/pages/ENG/esposendeEng.html"><img src="/images/uk-button-01.png" alt="UK" height="38px"> Eng</a>
+                <div id="user-controls" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
+                    <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='/pages/PT/login.html'">Login</button>
+                    <button type="button" class="btn btn-warning" onclick="window.location.href='/pages/PT/criarconta.html'">Criar Conta</button>
                 </div>
+    
+                <form id="searchForm" id="search" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex" role="search">
+                    <input type="search" id="searchQuery" name="query" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+                    <button class="btn btn-dark" type="submit"><img src="/images/searchbar.png" alt="search" height="30px"></button>
+                </form>
             </div>
         </div>
     </header>
@@ -139,6 +138,7 @@
     <!-- Insira sua chave de API do Google Maps aqui -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBhLbHnR1ELOgwjUHGh8xj-9gKGcWTkDU&callback=initMap" async defer></script>
     <script src="/js/esposende.js"></script>
+    <script src="/js/search.js"></script>
 </body>
 </html>
 

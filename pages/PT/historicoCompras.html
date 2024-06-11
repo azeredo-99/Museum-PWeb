@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compra de Bilhetes - British Museum</title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/Tp.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>Histórico de Compras - Artifacts Emporium</title>
 </head>
 <body>
     <header class="p-3 text-bg-dark">
@@ -32,37 +32,13 @@
                     <input type="search" id="searchQuery" name="query" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
                     <button class="btn btn-dark" type="submit"><img src="/images/searchbar.png" alt="search" height="30px"></button>
                 </form>
-    
-                <div class="text-end">
-                    <a class="btn btn-dark" href="/pages/PT/britishmuseumpagamento.html"><img src="/images/pt-button-01.png" alt="PT" height="38px"> PT</a>
-                    <a class="btn btn-dark" href="/pages/ENG/britishMuseumPagamentoEng.html"><img src="/images/uk-button-01.png" alt="UK" height="38px"> Eng</a>
-                </div>
             </div>
         </div>
     </header>
 
     <div class="container mt-5">
-        <h1>Compra de Bilhetes - British Museum</h1>
-        <form id="ticketForm">
-            <div class="mb-3">
-                <label for="ticketType" class="form-label">Tipo de Bilhete</label>
-                <select class="form-select" id="ticketType">
-                    <option selected>Selecione o tipo de bilhete...</option>
-                    <option value="normal">Normal ($15)</option>
-                    <option value="crianca">Criança (Grátis até 12 anos)</option>
-                    <option value="idoso">Idoso (Grátis para maiores de 65 anos)</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="visitDate" class="form-label">Data da Visita</label>
-                <input type="date" class="form-control" id="visitDate">
-            </div>
-            <div class="mb-3">
-                <label for="numberOfTickets" class="form-label">Número de Bilhetes</label>
-                <input type="number" class="form-control" id="numberOfTickets" min="1" value="1">
-            </div>
-            <button type="submit" class="btn btn-primary">Adicionar ao Carrinho</button>
-        </form>
+        <h1>Histórico de Compras</h1>
+        <div id="purchaseHistory" class="mt-4"></div>
     </div>
 
     <footer class="bg-light py-4 mt-5">
@@ -72,6 +48,53 @@
     </footer>
 
     <script src="/js/bootstrap.bundle.js"></script>
-    <script src="/js/adicionarCarrinho.js"></script>
+    <script src="/js/search.js"></script>
+    <script>
+        window.onload = async function() {
+            const token = localStorage.getItem('token');
+            const username = localStorage.getItem('username');
+            const userControls = document.getElementById('user-controls');
+
+            if (token && username) {
+                userControls.innerHTML = `
+                   <a href="historicoCompras.html" class="username-link text-white h3">${username}</a>
+                    <button class="btn btn-danger mb-2 ms-2" onclick="logout()">Logout</button>
+                `;
+            } else {
+                window.location.href = 'login.html';
+            }
+
+            try {
+                const response = await fetch('http://localhost:3000/purchase-history', {
+                    headers: {
+                        'Authorization': token
+                    }
+                });
+
+                const data = await response.json();
+                if (data.message === 'success') {
+                    const purchaseHistory = document.getElementById('purchaseHistory');
+                    if (data.data.length > 0) {
+                        data.data.forEach(purchase => {
+                            const purchaseInfo = `<p><strong>Item:</strong> ${purchase.item_name}, <strong>Data:</strong> ${purchase.purchase_date}</p>`;
+                            purchaseHistory.innerHTML += purchaseInfo;
+                        });
+                    } else {
+                        purchaseHistory.innerHTML = '<p>Não há compras registradas.</p>';
+                    }
+                } else {
+                    console.error('Erro ao obter histórico de compras:', data.error);
+                }
+            } catch (error) {
+                console.error('Erro ao obter histórico de compras:', error.message);
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('username');
+            window.location.href = 'login.html';
+        }
+    </script>
 </body>
 </html>

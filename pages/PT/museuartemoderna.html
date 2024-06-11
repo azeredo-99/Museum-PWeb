@@ -26,14 +26,14 @@
                     <li><a href="/pages/PT/bilhetes.html" class="nav-link px-2 text-white">Bilhetes</a></li>
                 </ul>
                 
-                <!--<div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
-                <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='login.html'">Login</button>
-                <button type="button" class="btn btn-warning" onclick="window.location.href='criarconta.html'">Criar Conta</button>
-                </div>-->
-                
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3  d-flex " role="search"> 
-                    <button class="btn btn-dark"><img src="/images/searchbar.png" alt="search" height="30px"></button> 
-                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+                <div id="user-controls" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
+                    <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='/pages/PT/login.html'">Login</button>
+                    <button type="button" class="btn btn-warning" onclick="window.location.href='/pages/PT/criarconta.html'">Criar Conta</button>
+                </div>
+    
+                <form id="searchForm" id="search" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex" role="search">
+                    <input type="search" id="searchQuery" name="query" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+                    <button class="btn btn-dark" type="submit"><img src="/images/searchbar.png" alt="search" height="30px"></button>
                 </form>
     
                 <div class="text-end">
@@ -139,6 +139,7 @@
     <!-- Insira sua chave de API do Google Maps aqui -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBhLbHnR1ELOgwjUHGh8xj-9gKGcWTkDU&callback=initMap" async defer></script>
     <script src="/js/museuartemoderna.js"></script>
+    <script src="/js/search.js"></script>
 </body>
 </html>
 

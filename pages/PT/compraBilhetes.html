@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra de Bilhetes</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/Tp.css">
+</head>
+<body>
+    <header class="p-3 text-bg-dark">
+        <div class="container-fluid">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/pages/PT/index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+                </a>
+                <div class="titulo"><h1>Artifacts Emporium</h1></div>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="/pages/PT/index.html" class="nav-link px-2 text-secondary">Home</a></li>
+                    <li><a href="/pages/PT/quemsomos.html" class="nav-link px-2 text-white">Quem Somos</a></li>
+                    <li><a href="/pages/PT/osnossosmuseus.html" class="nav-link px-2 text-white">Os Nossos Museus</a></li>
+                    <li><a href="/pages/PT/eventos.html" class="nav-link px-2 text-white">Eventos</a></li>
+                    <li><a href="/pages/PT/bilhetes.html" class="nav-link px-2 text-white">Bilhetes</a></li>
+                </ul>
+                
+                <div id="user-controls" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
+                    <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='/pages/PT/login.html'">Login</button>
+                    <button type="button" class="btn btn-warning" onclick="window.location.href='/pages/PT/criarconta.html'">Criar Conta</button>
+                </div>
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex" role="search"> 
+                    <button class="btn btn-dark"><img src="/images/searchbar.png" alt="search" height="30px"></button> 
+                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+                </form>
+    
+                <div class="text-end">
+                    <a class="btn btn-dark" href="/pages/PT/compraBilhetes.html"><img src="/images/pt-button-01.png" alt="PT" height="38px"> PT</a>
+                    <a class="btn btn-dark" href="/pages/PT/compraBilhetesEng.html"><img src="/images/uk-button-01.png" alt="UK" height="38px"> Eng</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mt-5">
+        <h1 id="museumTitle">Compra de Bilhetes</h1>
+        <form id="ticketForm">
+            <div class="mb-3">
+                <label for="ticketType" class="form-label">Tipo de Bilhete</label>
+                <select class="form-select" id="ticketType">
+                    <option selected>Selecione o tipo de bilhete...</option>
+                    <!-- Os tipos de bilhetes serão gerados dinamicamente -->
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="visitDate" class="form-label">Data da Visita</label>
+                <input type="date" class="form-control" id="visitDate">
+            </div>
+            <div class="mb-3">
+                <label for="numberOfTickets" class="form-label">Número de Bilhetes</label>
+                <input type="number" class="form-control" id="numberOfTickets" min="1" value="1">
+            </div>
+            <button type="button" class="btn btn-primary" id="addToCartBtn">Adicionar ao Carrinho</button>
+        </form>
+    </div>
+
+    <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            &copy; 2024 Artifacts Emporium. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const museuId = urlParams.get('museu');
+
+            if (!museuId) {
+                console.error('ID do museu não especificado na URL.');
+                return;
+            }
+
+            const ticketTypeDropdown = document.getElementById('ticketType');
+            const ticketDetailsContainer = document.getElementById('bilheteDetalhesContainer');
+
+            // Função para buscar e exibir os detalhes dos bilhetes
+            const fetchAndDisplayTickets = () => {
+                fetch(`http://localhost:3000/get-tickets/${museuId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.message === 'success' && Array.isArray(data.data)) {
+                            // Limpa o dropdown e o container de detalhes
+                            if (ticketTypeDropdown) ticketTypeDropdown.innerHTML = '';
+                            if (ticketDetailsContainer) ticketDetailsContainer.innerHTML = '';
+
+                            // Adiciona um item padrão no dropdown
+                            const defaultOption = document.createElement('option');
+                            defaultOption.textContent = 'Selecione um bilhete';
+                            defaultOption.value = '';
+                            if (ticketTypeDropdown) ticketTypeDropdown.appendChild(defaultOption);
+
+                            // Adiciona cada bilhete no dropdown
+                            data.data.forEach(bilhete => {
+                                const option = document.createElement('option');
+                                if (bilhete.tipo === 'normal') {
+                                    option.textContent = `Normal ($${bilhete.preco})`;
+                                } else if (bilhete.tipo === 'crianca') {
+                                    option.textContent = `Criança (Grátis até 12 anos)`;
+                                } else if (bilhete.tipo === 'idoso') {
+                                    option.textContent = `Idoso (Grátis para maiores de 65 anos)`;
+                                }
+                                option.value = bilhete.id;
+                                if (ticketTypeDropdown) ticketTypeDropdown.appendChild(option);
+                            });
+
+                            // Event listener para mudanças no dropdown
+                            if (ticketTypeDropdown) {
+                                ticketTypeDropdown.addEventListener('change', () => {
+                                    const selectedTicketId = ticketTypeDropdown.value;
+
+                                    // Encontra o bilhete selecionado nos dados recebidos
+                                    const selectedTicket = data.data.find(bilhete => bilhete.id === parseInt(selectedTicketId));
+
+                                    // Exibe os detalhes do bilhete selecionado
+                                    if (selectedTicket && ticketDetailsContainer) {
+                                        let details = `<h5>Detalhes do Bilhete Selecionado</h5>`;
+                                        if (selectedTicket.tipo === 'normal') {
+                                            details += `<p>Normal ($${selectedTicket.preco})</p>`;
+                                        } else if (selectedTicket.tipo === 'crianca') {
+                                            details += `<p>Criança (Grátis até 12 anos)</p>`;
+                                        } else if (selectedTicket.tipo === 'idoso') {
+                                            details += `<p>Idoso (Grátis para maiores de 65 anos)</p>`;
+                                        }
+                                        ticketDetailsContainer.innerHTML = details;
+                                    } else if (ticketDetailsContainer) {
+                                        ticketDetailsContainer.innerHTML = '<p>Selecione um bilhete válido.</p>';
+                                    }
+                                });
+                            }
+                        } else {
+                            console.error('Dados de bilhetes inválidos:', data);
+                            if (ticketTypeDropdown) ticketTypeDropdown.innerHTML = '<option>Erro ao carregar bilhetes</option>';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Erro ao buscar bilhetes:', error);
+                        if (ticketTypeDropdown) ticketTypeDropdown.innerHTML = '<option>Erro ao carregar bilhetes</option>';
+                    });
+            };
+
+            // Chamada inicial para buscar e exibir os bilhetes
+            fetchAndDisplayTickets();
+
+            // Redirecionar para a página de compra ao clicar no botão
+            document.getElementById('addToCartBtn').addEventListener('click', () => {
+                const selectedTicketId = ticketTypeDropdown.value;
+                const visitDate = document.getElementById('visitDate').value;
+                const numberOfTickets = document.getElementById('numberOfTickets').value;
+
+                // Redireciona para a página de compra
+                window.location.href = `carrinho.html?type=${selectedTicketId}&date=${visitDate}&quantity=${numberOfTickets}`;
+            });
+        });
+    </script>
+    <script src="/js/search.js"></script>
+</body>
+</html>
