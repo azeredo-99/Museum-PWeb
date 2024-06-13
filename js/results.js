@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                         card.innerHTML = `
                             <div class="card">
                                 <a href="${museum.pagina}">
-                                    <img src="${museum.imagem}" class="card-img-top" alt="${museum.nome}">
+                                    <img src="/${museum.imagem}" class="card-img-top" alt="${museum.nome}">
                                 </a>
                                 <div class="card-body">
                                     <h5 class="card-title font-weight-bold">${museum.nome}</h5>
