@@ -26,23 +26,25 @@
                 <li><a href="/pages/ENG/osNossosMuseusEng.html" class="nav-link px-2 text-white">Our Museums</a></li>
                 <li><a href="/pages/ENG/eventosEng.html" class="nav-link px-2 text-white">Events</a></li>
                 <li><a href="/pages/ENG/bilhetesEng.html" class="nav-link px-2 text-white">Tickets</a></li>
-                <li><a href="/pages/ENG/loginEng.html" class="nav-link px-2 text-white">Login</a></li>
+                <li><a href="/pages/ENG/dashboardEng.html" class="nav-link px-2 text-white">Dashboard</a></li>
             </ul>
             
-            <!--<div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
-                <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='login.html'">Login</button>
-                <button type="button" class="btn btn-warning" onclick="window.location.href='criarconta.html'">Criar Conta</button>
-                </div>-->
-                
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3  d-flex " role="search"> 
-                <button class="btn btn-dark"><img src="/images/searchbar.png" alt="search" height="30px"></button> 
-                <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+            <div id="user-controls" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
+                <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='/pages/ENG/loginEng.html'">Login</button>
+                <button type="button" class="btn btn-warning" onclick="window.location.href='/pages/ENG/criarContaENG.html'">Criar Conta</button>
+            </div>
+
+            <form id="searchForm" id="search" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex" role="search">
+                <input type="search" id="searchQuery" name="query" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+                <button class="btn btn-dark" type="submit"><img src="/images/searchbar.png" alt="search" height="30px"></button>
             </form>
+            
 
             <div class="text-end">
                 <a class="btn btn-dark" href="/pages/PT/index.html"><img src="/images/pt-button-01.png" alt="PT" height="38px"> PT</a>
                 <a class="btn btn-dark" href="/pages/ENG/indexEng.html"><img src="/images/uk-button-01.png" alt="UK" height="38px"> Eng</a>
             </div>
+
         </div>
     </div>
 </header>
@@ -73,19 +75,37 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-9 content">
-            <h1>Welcome to Artifacts Emporium</h1>
-       <h5>Explore the world's greatest museums from the comfort of your home. Discover the art, history and culture preserved at our partner institutions and gain insights into humanity's greatest achievements.</h5>  
+        <div class=" dcol-md-9 content">
+            <div class="d-flex justify-content-center">
+                <h1>Welcome to Artifacts Emporium!</h1>
+            </div>
+            <hr>
+            <div class="d-flex justify-content-center">
+                <h5>Welcome to Artefact Emporium, your ultimate portal for exploring and connecting with the world of museums and their fascinating works. Here, you can immerse yourself in a vast collection of world-renowned exhibitions, buy tickets to visit the most prestigious museums and keep abreast of the most exciting cultural events. Our platform offers a unique experience for art lovers, historians and the curious of all ages. Browse virtual galleries, discover rare pieces and plan your next cultural adventure with just a few clicks. At Artifacts Emporium, history and art come to life at your fingertips.</h5>
+            </div>
         </div>
     </div>
 </div>
 
+<div class=" container mt-4 d-flex justify-content-center">
+    <audio controls>
+        <source src="/audio/background-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</div>
+
+<div id="searchResults" class="container mt-4 d-flex justify-content-center">
+    <button id="reload-button" class="btn btn-primary">Leave a record of your visit</button>
+</div>
+<hr>
 <footer class="bg-light py-4">
     <div class="container text-center">
-        &copy; 2024 Artifacts Emporium. All rights reserved.
+        &copy; 2024 Artifacts Emporium. Todos os direitos reservados.
     </div>
 </footer>
 
 <script src="/js/bootstrap.bundle.js"></script>
+<script src="/js/search.js"></script>
+<script src="/js/status.js"></script>
 </body>
 </html>

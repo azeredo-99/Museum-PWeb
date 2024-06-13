@@ -41,7 +41,7 @@
 
             <div class="text-end">
                 <a class="btn btn-dark" href="/pages/PT/index.html"><img src="/images/pt-button-01.png" alt="PT" height="38px"> PT</a>
-                <a class="btn btn-dark" href="/pages/PT/indexEng.html"><img src="/images/uk-button-01.png" alt="UK" height="38px"> Eng</a>
+                <a class="btn btn-dark" href="/pages/ENG/indexEng.html"><img src="/images/uk-button-01.png" alt="UK" height="38px"> Eng</a>
             </div>
 
         </div>
@@ -74,24 +74,33 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-9 content">
-            <h1>Welcome to Artifacts Emporium</h1>
-            <h5>Explore os maiores museus do mundo no conforto da sua casa. Descubra a arte, a história e a cultura preservadas nas nossas instituições parceiras e obtenha insights sobre as maiores conquistas da humanidade.</h5>
+        <div class=" dcol-md-9 content">
+            <div class="d-flex justify-content-center">
+                <h1>Bem Vindo a Artifacts Emporium!</h1>
+            </div>
+            <hr>
+            <div class="d-flex justify-content-center">
+                <h5>Bem-vindo ao Artefact Emporium, o seu portal definitivo para explorar e estabelecer ligações com o mundo dos museus e as suas obras fascinantes.
+                    Aqui, pode mergulhar numa vasta coleção de exposições de renome mundial, comprar bilhetes para visitar os museus mais prestigiados e manter-se a par dos eventos culturais mais excitantes.
+                     A nossa plataforma oferece uma experiência única aos amantes da arte, aos historiadores e aos curiosos de todas as idades.
+                      Navegue por galerias virtuais, descubra peças raras e planeie a sua próxima aventura cultural com apenas alguns cliques. No Artifacts Emporium,a história e a arte ganham vida na ponta dos seus dedos.
+               </h5>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="container mt-4">
+<div class=" container mt-4 d-flex justify-content-center">
     <audio controls>
-        <source src="audio/background-music.mp3" type="audio/mpeg">
+        <source src="/audio/background-music.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 </div>
 
-<div id="searchResults" class="container mt-4">
-    <button id="reload-button" class="btn btn-primary">Reload</button>
+<div id="searchResults" class="container mt-4 d-flex justify-content-center">
+    <button id="reload-button" class="btn btn-primary">Deixe registada a sua visita</button>
 </div>
-
+<hr>
 <footer class="bg-light py-4">
     <div class="container text-center">
         &copy; 2024 Artifacts Emporium. Todos os direitos reservados.
@@ -100,51 +109,7 @@
 
 <script src="/js/bootstrap.bundle.js"></script>
 <script src="/js/search.js"></script>
-<script>
-    window.onload = function() {
-        const token = localStorage.getItem('token');
-        const username = localStorage.getItem('username');
-        const userControls = document.getElementById('user-controls');
-
-        if (token && username) {
-            userControls.className = 'col-12 col-lg-auto mb-3 mt-2 mb-lg-0 me-lg-3';
-            userControls.innerHTML = `
-                <a href="historicoCompras.html" class="username-link text-white h3">${username}</a>
-                <button class="btn btn-danger mb-2 ms-2" onclick="logout()">Logout</button>
-            `;
-        }
-
-        // Add event listener to the reload button
-        const reloadButton = document.getElementById('reload-button');
-        reloadButton.addEventListener('click', reloadPage);
-    };
-
-    async function incrementVisit() {
-        try {
-            const response = await fetch('http://localhost:3000/increment-visit');
-            const data = await response.json();
-            if (data.message !== 'success') {
-                console.error('Erro ao incrementar visitas:', data.error);
-            } else {
-                console.log('Visitas incrementadas com sucesso.');
-            }
-        } catch (error) {
-            console.error('Erro ao incrementar visitas:', error);
-        }
-    }
-
-    function reloadPage() {
-        incrementVisit().then(() => {
-            window.location.reload();
-        });
-    }
-
-    function logout() {
-        localStorage.removeItem('token');
-        localStorage.removeItem('username');
-        window.location.href = 'login.html';
-    }
-</script>
+<script src="/js/status.js"></script>
 
 </body>
 </html>
